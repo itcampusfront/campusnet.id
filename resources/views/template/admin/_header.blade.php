@@ -1,9 +1,9 @@
 
     <!-- Navbar-->
-    <header class="app-header"><a class="app-header__logo" href="/admin">{{ get_website_name() }}</a>
+    <header class="app-header bg-white"><a class="app-header__logo" href="/admin">{{ get_website_name() }}</a>
       <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"></a>
       <!-- Navbar Right Menu-->
-      <ul class="app-nav ml-auto ml-md">
+      <ul class="app-nav ml-auto ml-md ">
         <!-- User Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown"><i class="fa fa-user fa-lg"></i></a>
           <ul class="dropdown-menu settings-menu dropdown-menu-right">

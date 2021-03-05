@@ -1,114 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Error 404</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<style type="text/css">
-body {
-  background-color: #2F3242;
-}
-svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -250px;
-  margin-left: -400px;
-}
-.message-box {
-  height: 200px;
-  width: 380px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: 50px;
-  color: #FFF;
-  /*font-family: Roboto;*/
-  font-weight: 300;
-}
-.message-box h1 {
-  font-size: 60px;
-  line-height: 46px;
-  margin-bottom: 40px;
-}
-.buttons-con .action-link-wrap {
-  margin-top: 40px;
-}
-.buttons-con .action-link-wrap a {
-  background: #ef4a5b;
-  padding: 8px 25px;
-  border-radius: 4px;
-  color: #FFF;
-  font-weight: bold;
-  font-size: 14px;
-  transition: all 0.3s linear;
-  cursor: pointer;
-  text-decoration: none;
-  margin-right: 10px
-}
-.buttons-con .action-link-wrap a:hover {
-  background: #5A5C6C;
-  color: #fff;
-}
-
-#Polygon-1 , #Polygon-2 , #Polygon-3 , #Polygon-4 , #Polygon-4, #Polygon-5 {
-  animation: float 1s infinite ease-in-out alternate;
-}
-#Polygon-2 {
-  animation-delay: .2s; 
-}
-#Polygon-3 {
-  animation-delay: .4s; 
-}
-#Polygon-4 {
-  animation-delay: .6s; 
-}
-#Polygon-5 {
-  animation-delay: .8s; 
-}
-
-@keyframes float {
-  100% {
-    transform: translateY(20px);
-  }
-}
-@media (max-width: 600px) {
-  svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -250px;
-    margin-left: -190px;
-  }
-  .message-box {
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -190px;
-    text-align: center;
-  }
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Error 404</title>
+  @include('template/front/_head')
 </head>
 <body>
-  <svg width="380px" height="500px" viewBox="0 0 837 1045" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-          <path d="M353,9 L626.664028,170 L626.664028,487 L353,642 L79.3359724,487 L79.3359724,170 L353,9 Z" id="Polygon-1" stroke="#007FB2" stroke-width="6" sketch:type="MSShapeGroup"></path>
-          <path d="M78.5,529 L147,569.186414 L147,648.311216 L78.5,687 L10,648.311216 L10,569.186414 L78.5,529 Z" id="Polygon-2" stroke="#EF4A5B" stroke-width="6" sketch:type="MSShapeGroup"></path>
-          <path d="M773,186 L827,217.538705 L827,279.636651 L773,310 L719,279.636651 L719,217.538705 L773,186 Z" id="Polygon-3" stroke="#795D9C" stroke-width="6" sketch:type="MSShapeGroup"></path>
-          <path d="M639,529 L773,607.846761 L773,763.091627 L639,839 L505,763.091627 L505,607.846761 L639,529 Z" id="Polygon-4" stroke="#F2773F" stroke-width="6" sketch:type="MSShapeGroup"></path>
-          <path d="M281,801 L383,861.025276 L383,979.21169 L281,1037 L179,979.21169 L179,861.025276 L281,801 Z" id="Polygon-5" stroke="#36B455" stroke-width="6" sketch:type="MSShapeGroup"></path>
-      </g>
-  </svg>
-  <div class="message-box">
-    <h1>404</h1>
-    <p>Page not Found</p>
-    <div class="buttons-con">
-      <div class="action-link-wrap">
-        <a onclick="history.back(-1)" class="link-button link-back-button">Kembali</a>
-        <a href="/" class="link-button">Ke Halaman Utama</a>
+<div class="bg-theme-1">
+  <div class="d-flex justify-content-end align-items-center text-white h-100">
+    <div class="container text-center">
+      <div class="d-flex justify-content-center">
+        <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">4</h1>
+        <h1 data-aos="fade-up" data-aos-duration="1500" data-aos-anchor-placement="top-bottom" style="color: rgba(0,0,0,.2);">0</h1>
+        <h1 data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">4</h1>
       </div>
+      <h5 class="text-capitalize mb-4" data-aos="fade-up" data-aos-duration="2500">We are Sorry, but the page you are requested was <span style="color: rgba(0,0,0,.2);" class="fw-bold">not found</span></h5> 
+      <a data-aos="fade-up" data-aos-duration="3000" href="/" class="btn btn-theme text-uppercase btn-theme-1 me-2">Home</a>
     </div>
+    <p class="position-absolute" style="top: 96%; transform: translate(-50%,-50%)!important; left: 50%!important;">Made with <i class="fa fa-heart" style="font-size: .8rem; color: rgba(230, 57, 70, 1)"></i></p>
   </div>
+</div>
+<style type="text/css">
+  nav {display: none!important;}
+  footer{display: none;}
+  h1{font-size: 12rem}
+  h1, h5, p {color: rgba(255,255,255,1);}
+  .bg-theme-1{animation: changebg 7s infinite; height: 100vh}
+  .btn-theme-1{background-color: rgba(0,0,0,.2); animation: animatebtn 7s infinite!important}
+  @keyframes changebg {
+    0% {background-color: var(--color-1)}
+    25%{background-color: var(--color-2)}
+    50% {background-color: var(--color-1)}
+    74% {background-color: var(--color-2)}
+    100% {background-color: var(--color-1)}
+  }
+  @keyframes animatebtn {
+    0% {width: 150px}
+    25% {width: 200px}
+    50% {width: 250px}
+    75% {width: 200px}
+    100% {width: 150px}
+  }
+</style>
 </body>
 </html>
