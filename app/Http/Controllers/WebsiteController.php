@@ -157,7 +157,7 @@ class WebsiteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function chcek(Request $request)
+    public function check(Request $request)
     {
 		// Params
 		$key = $request->query('key');
