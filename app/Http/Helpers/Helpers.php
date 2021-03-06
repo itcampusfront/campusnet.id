@@ -11,24 +11,10 @@ if(!function_exists('role_admin')){
     }
 }
 
-// Role manager
-if(!function_exists('role_manager')){
-    function role_manager(){
+// Role member
+if(!function_exists('role_member')){
+    function role_member(){
         return 2;
-    }
-}
-
-// Role pengajar
-if(!function_exists('role_pengajar')){
-    function role_pengajar(){
-        return 3;
-    }
-}
-
-// Role pelajar
-if(!function_exists('role_pelajar')){
-    function role_pelajar(){
-        return 4;
     }
 }
 

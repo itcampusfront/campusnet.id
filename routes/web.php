@@ -22,6 +22,11 @@ Route::group(['middleware' => ['admin']], function(){
 	// Dashboard
 	Route::get('/admin', 'DashboardController@admin');
 
+	// Website
+	Route::get('/admin/website', 'WebsiteController@index');
+	Route::get('/admin/website/activation/{id}', 'WebsiteController@activation');
+	Route::post('/admin/website/activate', 'WebsiteController@activate');
+
 	// AJAX
 	Route::get('/admin/ajax/show-images', 'QuizController@show_images');
 	Route::post('/admin/ajax/upload-image', 'QuizController@upload_image');
@@ -83,6 +88,29 @@ Route::group(['middleware' => ['admin']], function(){
 	Route::post('/admin/pengaturan/update', 'SettingController@update');
 });
 
+// Member Capabilities...
+Route::group(['middleware' => ['member']], function(){
+	
+	// Logout
+	Route::get('/member/logout', function(){
+	    return redirect('/');
+	});
+	Route::post('/member/logout', 'Auth\LoginController@logout');
+
+	// Dashboard
+	Route::get('/member', 'DashboardController@member');
+
+	// Website
+	Route::get('/member/website', 'WebsiteController@index');
+	Route::get('/member/website/create', 'WebsiteController@create');
+	Route::post('/member/website/store', 'WebsiteController@store');
+
+	// Aktivitas Kelas
+	Route::get('/kelas/{permalink}/aktivitas/{id}', 'KelasController@activity');
+	Route::get('/kelas/{permalink}/aktivitas/penilaian/kelas', 'PenilaianKelasController@form');
+	Route::get('/kelas/{permalink}/aktivitas/penilaian/pengajar', 'PenilaianPengajarController@form');
+});
+
 // Guest Capabilities...
 Route::group(['middleware' => ['guest']], function(){
 	// Home
@@ -117,32 +145,4 @@ Route::group(['middleware' => ['guest']], function(){
 	Route::post('/login', 'Auth\LoginController@login');
 	Route::get('/recovery-password', 'Auth\LoginController@showRecoveryPasswordForm');
 	Route::post('/recovery-password', 'Auth\LoginController@recoveryPassword');
-});
-
-// Member Capabilities...
-Route::group(['middleware' => ['member']], function(){
-	
-	// Logout
-	Route::get('/logout', function(){
-	    return redirect('/');
-	});
-	Route::post('/logout', 'Auth\LoginController@logout');
-
-	// Aktivitas Kelas
-	Route::get('/kelas/{permalink}/aktivitas/{id}', 'KelasController@activity');
-	Route::get('/kelas/{permalink}/aktivitas/penilaian/kelas', 'PenilaianKelasController@form');
-	Route::get('/kelas/{permalink}/aktivitas/penilaian/pengajar', 'PenilaianPengajarController@form');
-
-	// Register Kelas
-	Route::post('/kelas/register', 'KelasController@register');
-
-	// Progress Kelas
-	Route::post('/kelas/progress', 'ProgressController@input');
-	Route::post('/kelas/upload-tugas', 'ProgressController@input_tugas');
-
-	// Penilaian Kelas
-	Route::post('/kelas/review-kelas', 'PenilaianKelasController@store');
-
-	// Penilaian Pengajar
-	Route::post('/kelas/review-pengajar', 'PenilaianPengajarController@store');
 });
