@@ -50,12 +50,12 @@ class LoginController extends Controller
         //     return view('auth/login', ['message' => 'Anda harus login terlebih dahulu!']);
         // }
         // Set the previous url that we came from to redirect to after successful login but only if is internal
-        elseif(($urlPrevious != $urlBase . '/login') && (substr($urlPrevious, 0, strlen($urlBase)) === $urlBase)) {
-            session()->put('url.intended', $urlPrevious);
+        // elseif(($urlPrevious != $urlBase . '/login') && (substr($urlPrevious, 0, strlen($urlBase)) === $urlBase)) {
+        //     session()->put('url.intended', $urlPrevious);
 
-            // View
-            return view('auth/login', ['message' => 'Anda harus login terlebih dahulu!']);
-        }
+        //     // View
+        //     return view('auth/login', ['message' => 'Anda harus login terlebih dahulu!']);
+        // }
 
         // View
         return view('auth/login');
@@ -117,14 +117,14 @@ class LoginController extends Controller
         $account->save();
 
         // Redirect to URL intended
-        if(session()->get('url.intended') != null){
-            return redirect()->intended();
-        }
+        // if(session()->get('url.intended') != null){
+        //     return redirect()->intended();
+        // }
 
         // Redirect
-        if($user->role == role_admin() || $user->role == role_manager() || $user->role == role_pengajar())
+        if($user->role == role_admin())
             return redirect('/admin');
-        elseif($user->role == role_pelajar())
+        elseif($user->role == role_member())
             return redirect('/member');
     }
 

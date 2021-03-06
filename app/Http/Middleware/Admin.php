@@ -16,11 +16,11 @@ class Admin
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if(Auth::guard($guard)->check() && ($request->user()->role == role_admin() || $request->user()->role == role_manager() || $request->user()->role == role_pengajar())){
+        if(Auth::guard($guard)->check() && $request->user()->role == role_admin()){
             // Return
             return $next($request);
         }
-        
+
         return redirect('/login');
     }
 }

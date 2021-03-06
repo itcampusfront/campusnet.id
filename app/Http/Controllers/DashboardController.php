@@ -25,6 +25,17 @@ class DashboardController extends Controller
     }
 
     /**
+     * Dashboard Member
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function member()
+    {
+        // View
+        return view('member/dashboard/index');
+    }
+
+    /**
      * Home Page
      *
      * @return \Illuminate\Http\Response

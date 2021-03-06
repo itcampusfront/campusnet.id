@@ -4,32 +4,72 @@
 
 @section('content')
 
-<main class="app-content bg-light">
-  <div class="app-title d-none">
-    <div>
-      <h1><i class="fa fa-dashboard"></i> Dashboard</h1>
-      <p>Menu untuk menampilkan data dan statistik penting</p>
-    </div>
-    <ul class="app-breadcrumb breadcrumb">
-      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-      <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-    </ul>
+<div class="content">
+  <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
+      <div class="media">
+          <img width="150" class="mr-4" src="{{asset('assets/images/ilustrasi/undraw_social_friends_nsbv.svg')}}">
+          <div class="media-body">
+              <h5 class="m-0">Selamat datang {{ Auth::user()->nama_user }}</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing eli<br>sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+              <button class="btn btn-theme-2 rounded-3 px-3">Order Sekarang</button>
+          </div>
+      </div>
   </div>
-  <section>
-    
-  </section>
-</main>
+  <div class="detail mb-4">
+      <div class="row">
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="card border-0 shadow-sm rounded-3 text-center">
+                  <div class="card-header rounded-3 border-0 shadow" style="background-color: #f95738; color: #fff">
+                      <p class="m-0">Pengguna Baru</p>
+                  </div>
+                    <div class="card-body">
+                        <h1>2</h1>
+                    </div>
+              </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="card border-0 shadow-sm rounded-3 text-center">
+                  <div class="card-header rounded-3 border-0 shadow" style="background-color: #0d3b66; color: #fff">
+                      <p class="m-0">Website Baru</p>
+                  </div>
+                    <div class="card-body">
+                        <h1>2</h1>
+                    </div>
+              </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="card border-0 shadow-sm rounded-3 text-center">
+                  <div class="card-header rounded-3 border-0 shadow" style="background-color: #ffd100; color: #fff">
+                      <p class="m-0">Menunggu Pembayaran</p>
+                  </div>
+                    <div class="card-body">
+                        <h1>2</h1>
+                    </div>
+              </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+              <div class="card border-0 shadow-sm rounded-3 text-center">
+                  <div class="card-header rounded-3 border-0 shadow" style="background-color: #735d78; color: #fff">
+                      <p class="m-0">Transaksi Berhasil</p>
+                  </div>
+                    <div class="card-body">
+                        <h1>2</h1>
+                    </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
+      <h5>Website Kamu</h5>
+      <div class="list-group list-group-flush">
+          <a class="list-group-item" href="#"><i class="fas fa-globe-asia mr-3"></i> www.something.com</a>
+          <a class="list-group-item" href="#"><i class="fas fa-globe-asia mr-3"></i> www.something.com</a>
+          <a class="list-group-item" href="#"><i class="fas fa-globe-asia mr-3"></i> www.something.com</a>
+          <a class="list-group-item" href="#"><i class="fas fa-globe-asia mr-3"></i> www.something.com</a>
+          <a class="list-group-item" href="#"><i class="fas fa-globe-asia mr-3"></i> www.something.com</a>
+      </div>
+  </div>
+</div>
   
-@endsection
-
-@section('js-extra')
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
-
-@endsection
-
-@section('css-extra')
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
-
 @endsection
