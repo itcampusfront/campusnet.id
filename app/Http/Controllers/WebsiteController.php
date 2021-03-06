@@ -30,7 +30,7 @@ class WebsiteController extends Controller
         }
         elseif(Auth::user()->role == role_member()){
             // Data website
-            $website = Website::join('users','website.id_user','=','users.id_user')->where('website.id_user','=',Auth::user()->id_user)->get();
+            $website = Website::join('users','website.id_user','=','users.id_user')->where('website.id_user','=',Auth::user()->id_user)->orderBy('website_at','desc')->get();
 
             // View
             return view('member/website/index', [
@@ -150,6 +150,29 @@ class WebsiteController extends Controller
 
         // Redirect
         return redirect('/admin/website')->with(['message' => 'Berhasil mengaktivasi website.']);
+    }
+	
+    /**
+     * Check
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function chcek(Request $request)
+    {
+		// Params
+		$key = $request->query('key');
+		$username = $request->query('username');
+		$host = $request->query('host');
+
+        // Check
+        $website =  Website::join('users','website.id_user','=','users.id_user')->where('website_key','=',$key)->where('website_url','=',$host)->where('username','=',$username)->first();
+		
+		// Conditions
+		if($website)
+			echo true;
+		else{			
+			echo false;
+		}
     }
 
     /**

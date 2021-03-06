@@ -22,6 +22,7 @@
                         <th width="30">No.</th>
                         <th>Domain</th>
                         <th>User</th>
+                        <th width="100">Waktu</th>
                         <th width="100">Status</th>
                         <th width="80">Aksi</th>
                     </tr>
@@ -41,6 +42,12 @@
                                 <a href="/admin/user/detail/{{ $data->id_user }}">{{ $data->nama_user }}</a>
                                 <br>
                                 <span class="small text-muted">{{ $data->email }}</span>
+                            </td>
+                            <td>
+                                <span class="d-none">{{ $data->website_at }}</span>
+                                {{ date('d/m/Y', strtotime($data->website_at)) }}
+                                <br>
+                                <span class="small text-muted">{{ date('H:i', strtotime($data->website_at)) }} WIB</span>
                             </td>
                             <td>
                                 @if($data->website_status == 1)

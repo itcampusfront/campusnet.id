@@ -116,6 +116,9 @@ Route::group(['middleware' => ['guest']], function(){
 	// Home
 	Route::get('/', 'DashboardController@home');
 
+	// Check
+	Route::get('/check', 'WebsiteController@check');
+
 	// User
 	Route::get('/profil', 'UserController@profile');
 	Route::post('/profil/update-profil', 'UserController@update_profile');

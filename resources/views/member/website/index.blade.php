@@ -23,7 +23,7 @@
                     <tr>
                         <th width="30">No.</th>
                         <th>Domain</th>
-                        <th>Key</th>
+                        <th>API Key</th>
                         <th width="100">Status</th>
                         <th width="80">Aksi</th>
                     </tr>
@@ -34,7 +34,7 @@
                         @foreach($website as $data)
                         <tr>
                             <td align="center">{{ $i }}</td>
-                            <td>{{ $data->website_url }}</td>
+                            <td><a href="/member/website/detail/{{ $data->id_website }}">{{ $data->website_url }}</a></td>
                             <td>{{ $data->website_key }}</td>
                             <td>
                                 @if($data->website_status == 1)
