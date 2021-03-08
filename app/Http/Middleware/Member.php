@@ -16,7 +16,7 @@ class Member
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if(Auth::guard($guard)->check() && ($request->user()->role == role_member())){
+        if(Auth::guard($guard)->check() && $request->user()->role == role_member()){
             // Return
             return $next($request);
         }

@@ -4,266 +4,125 @@
 
 @section('content')
 
-<main class="app-content">
-  <div class="app-title">
-    <div>
-      <h1><i class="fa fa-users"></i> Tambah User</h1>
-      <p>Menu untuk menambah data user</p>
-    </div>
-    <ul class="app-breadcrumb breadcrumb">
-      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-      <li class="breadcrumb-item"><a href="/admin/user">User</a></li>
-      <li class="breadcrumb-item">Tambah User</li>
-    </ul>
-  </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="tile">
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/admin"><i class="fas fa-tachometer-alt"></i></a></li>
+        <li class="breadcrumb-item"><a href="/admin/user">User</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Tambah User</li>
+    </ol>
+</nav>
+<div class="content">
+    <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
+        <h5>Tambah User</h5>
         <form method="post" action="/admin/user/store">
             {{ csrf_field() }}
-            <div class="tile-title-w-btn">
-                <h3 class="title">Tambah User</h3>
-                <p><button class="btn btn-primary icon-btn" type="submit"><i class="fa fa-save mr-2"></i>Simpan</button></p>
-            </div>
-            <div class="tile-body">
-                <div class="row">
-                    <div class="form-group col-md-12">
-                        <label>Nama <span class="text-danger">*</span></label>
-                        <input type="text" name="nama_user" class="form-control {{ $errors->has('nama_user') ? 'is-invalid' : '' }}" value="{{ old('nama_user') }}" placeholder="Masukkan Nama">
-                        @if($errors->has('nama_user'))
-                        <div class="form-control-feedback text-danger">{{ ucfirst($errors->first('nama_user')) }}</div>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label>Tanggal Lahir <span class="text-danger">*</span></label>
-                        <input type="text" name="tanggal_lahir" class="form-control {{ $errors->has('tanggal_lahir') ? 'is-invalid' : '' }}" value="{{ old('tanggal_lahir') }}" placeholder="Masukkan Tanggal Lahir (Format: dd/mm/yyyy)">
-                        @if($errors->has('tanggal_lahir'))
-                        <div class="form-control-feedback text-danger">{{ ucfirst($errors->first('tanggal_lahir')) }}</div>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label>Jenis Kelamin <span class="text-danger">*</span></label>
-                        <br>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="jenis_kelamin" id="gender-1" value="L" {{ old('jenis_kelamin') == 'L' ? 'checked' : '' }}>
-                          <label class="form-check-label" for="gender-1">
-                            Laki-Laki
-                          </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="jenis_kelamin" id="gender-2" value="P" {{ old('jenis_kelamin') == 'P' ? 'checked' : '' }}>
-                          <label class="form-check-label" for="gender-2">
-                            Perempuan
-                          </label>
-                        </div>
-                        @if($errors->has('jenis_kelamin'))
-                        <div class="form-control-feedback text-danger">{{ ucfirst($errors->first('jenis_kelamin')) }}</div>
-                        @endif
-                    </div>
-                    <div class="separator"></div>
-                    <div class="form-group col-md-6">
-                        <label>Email <span class="text-danger">*</span></label>
-                        <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}" placeholder="Masukkan Email">
-                        @if($errors->has('email'))
-                        <div class="form-control-feedback text-danger">{{ ucfirst($errors->first('email')) }}</div>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label>Nomor HP <span class="text-danger">*</span></label>
-                        <input type="text" name="nomor_hp" class="form-control number-only {{ $errors->has('nomor_hp') ? 'is-invalid' : '' }}" value="{{ old('nomor_hp') }}" placeholder="Masukkan Nomor HP">
-                        @if($errors->has('nomor_hp'))
-                        <div class="form-control-feedback text-danger">{{ ucfirst($errors->first('nomor_hp')) }}</div>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label>Username <span class="text-danger">*</span></label>
-                        <input type="text" name="username" class="form-control {{ $errors->has('username') ? 'is-invalid' : '' }}" value="{{ old('username') }}" placeholder="Masukkan Username">
-                        @if($errors->has('username'))
-                        <div class="form-control-feedback text-danger">{{ ucfirst($errors->first('username')) }}</div>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label>Password <span class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <input type="password" name="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="Masukkan Password">
-                            <div class="input-group-append">
-                              <a href="#" class="btn btn-toggle-password input-group-text {{ $errors->has('password') ? 'border-danger' : '' }}"><i class="fa fa-eye"></i></a>
-                            </div>
-                        </div>
-                        @if($errors->has('password'))
-                        <div class="form-control-feedback text-danger">{{ ucfirst($errors->first('password')) }}</div>
-                        @endif
-                    </div>
-                    <div class="separator"></div>
-                    <div class="form-group col-md-6">
-                        <label>Role <span class="text-danger">*</span></label>
-                        <select name="role" class="form-control {{ $errors->has('role') ? 'is-invalid' : '' }}">
-                          <option value="" disabled selected>--Pilih--</option>
-                          @foreach($role as $data)
-                          <option value="{{ $data->id_role }}" {{ old('role') == $data->id_role ? 'selected' : '' }}>{{ $data->nama_role }}</option>
-                          @endforeach
-                        </select>
-                        @if($errors->has('role'))
-                        <div class="form-control-feedback text-danger">{{ ucfirst($errors->first('role')) }}</div>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label>Status <span class="text-danger">*</span></label>
-                        <select name="status" class="form-control {{ $errors->has('status') ? 'is-invalid' : '' }}">
-                          <option value="" disabled selected>--Pilih--</option>
-                          <option value="1" {{ old('status') === 1 ? 'selected' : '' }}>Aktif</option>
-                          <option value="0" {{ old('status') === 0 ? 'selected' : '' }}>Tidak Aktif</option>
-                        </select>
-                        @if($errors->has('status'))
-                        <div class="form-control-feedback text-danger">{{ ucfirst($errors->first('status')) }}</div>
-                        @endif
-                    </div>
-                    <div class="separator"></div>
-                    <div class="form-group col-md-12">
-                        <label>Foto</label>
-                        <br>
-                        <input type="file" id="file" class="d-none" accept="image/*">
-                        <a class="btn btn-sm btn-secondary btn-file" href="#"><i class="fa fa-folder-open mr-2"></i>Pilih Foto...</a>
-                        <br>
-                        <img id="img-file" class="mt-2 img-thumbnail d-none" style="max-height: 150px">
-                        <input type="hidden" name="gambar" id="src-img">
-                    </div>
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label">Nama Lengkap <span class="text-danger">*</span></label>
+                <div class="col-md-10">
+                    <input type="text" name="nama_user" class="form-control {{ $errors->has('nama_user') ? 'border-danger' : '' }}" value="{{ old('nama_user') }}" placeholder="Masukkan Nama User">
+                    @if($errors->has('nama_user'))
+                    <div class="small text-danger">{{ ucfirst($errors->first('nama_user')) }}</div>
+                    @endif
                 </div>
             </div>
-            <div class="tile-footer"><button class="btn btn-primary icon-btn" type="submit"><i class="fa fa-save mr-2"></i>Simpan</button></div>
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label">Email <span class="text-danger">*</span></label>
+                <div class="col-md-10">
+                    <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'border-danger' : '' }}" value="{{ old('email') }}" placeholder="Masukkan Email">
+                    @if($errors->has('email'))
+                    <div class="small text-danger">{{ ucfirst($errors->first('email')) }}</div>
+                    @endif
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label">Nomor HP <span class="text-danger">*</span></label>
+                <div class="col-md-10">
+                    <input type="text" name="nomor_hp" class="form-control number-only {{ $errors->has('nomor_hp') ? 'border-danger' : '' }}" value="{{ old('nomor_hp') }}" placeholder="Masukkan Nomor HP">
+                    @if($errors->has('nomor_hp'))
+                    <div class="small text-danger">{{ ucfirst($errors->first('nomor_hp')) }}</div>
+                    @endif
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label">Username <span class="text-danger">*</span></label>
+                <div class="col-md-10">
+                    <input type="text" name="username" class="form-control {{ $errors->has('username') ? 'border-danger' : '' }}" value="{{ old('username') }}" placeholder="Masukkan Username">
+                    @if($errors->has('username'))
+                    <div class="small text-danger">{{ ucfirst($errors->first('username')) }}</div>
+                    @endif
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label">Password <span class="text-danger">*</span></label>
+                <div class="col-md-10">
+                    <div class="input-group">
+                        <input type="password" name="password" class="form-control {{ $errors->has('password') ? 'border-danger' : '' }}" placeholder="Masukkan Password">
+                        <div class="input-group-append">
+                            <a href="#" class="btn btn-toggle-password border-0 btn-theme-1 {{ $errors->has('password') ? 'border-danger' : 'btn-outline-secondary' }}"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    @if($errors->has('password'))
+                    <div class="small text-danger">{{ ucfirst($errors->first('password')) }}</div>
+                    @endif
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label">Role <span class="text-danger">*</span></label>
+                <div class="col-md-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="role" id="role-{{ role_admin() }}" value="{{ role_admin() }}" {{ old('role') === role_admin() ? 'checked' : '' }}>
+                        <label class="form-check-label" for="role-{{ role_admin() }}">{{ get_role_name(role_admin()) }}</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="role" id="role-{{ role_member() }}" value="{{ role_member() }}" {{ old('role') === role_member() ? 'checked' : '' }}>
+                        <label class="form-check-label" for="role-{{ role_member() }}">{{ get_role_name(role_member()) }}</label>
+                    </div>
+                    @if($errors->has('role'))
+                    <div class="small text-danger">{{ ucfirst($errors->first('role')) }}</div>
+                    @endif
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label"></label>
+                <div class="col-md-10">
+                    <button type="submit" class="btn btn-theme-1">Simpan</button>
+                </div>
+            </div>
         </form>
-      </div>
-    </div>
-  </div>
-</main>
-
-<!-- Modal Croppie -->
-<div class="modal fade" id="modal-croppie" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Potong Gambar</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-				<div class="table-responsive">
-                	<div id="demo" class="mt-3"></div>
-				</div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="btn-crop"><i class="fa fa-save mr-2"></i>Potong dan Simpan</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close mr-2"></i>Batal</button>
-            </div>
-        </div>
     </div>
 </div>
-<!-- End Modal Croppie -->
-
+  
 @endsection
 
 @section('js-extra')
 
-<script type="text/javascript" src="{{ asset('templates/vali-admin/js/plugins/bootstrap-datepicker.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/plugins/croppie/croppie.min.js') }}"></script>
-<script type="text/javascript">
-  // Input Tanggal Lahir
-  $("input[name=tanggal_lahir]").datepicker({
-      format: "dd/mm/yyyy",
-      autoclose: true,
-      todayHighlight: true
-  });
-
-  /* Croppie */
-  var demo = $('#demo').croppie({
-      viewport: {width: 400, height: 400},
-      boundary: {width: 400, height: 400}
-  });
-  var imageURL;
-
-  // Button File
-  $(document).on("click", ".btn-file", function(e){
-  e.preventDefault();
-      $("#file").trigger("click");
-  });
-
-  // Change Input File
-  $(document).on("change", "#file", function(){
-      readURL(this);
-      $("#modal-croppie").modal("show");
-  });
-
-  // Show Modal Croppie
-  $('#modal-croppie').on('shown.bs.modal', function(){
-    demo.croppie('bind', {
-        url: imageURL
-    }).then(function(){
-        console.log('jQuery bind complete');
-    });
-  });
-
-  // Hide Modal Croppie
-  $('#modal-croppie').on('shown.bs.hidden', function(){
-    $("#img-file").removeAttr("src");
-    $("input[name=gambar]").val("");
-    $("#file").val(null);
-  });
-
-  // Crop Image
-  $(document).on("click", "#btn-crop", function(e){
-    demo.croppie("result", {
-        type: "base64",
-        format: "png",
-        size: {width: 400, height: 400}
-    }).then(function(response){
-      $("#img-file").attr("src",response).removeClass("d-none");
-      $("input[name=gambar]").val(response);
-    });
-    $("#file").val(null);
-    $("#modal-croppie").modal("hide");
-  });
-
-  function readURL(input){
-    if(input.files && input.files[0]){
-        var reader = new FileReader();
-        reader.onload = function(e){
-            imageURL = e.target.result;
+<script>
+    // Button toggle password
+    $(document).on("click", ".btn-toggle-password", function(e){
+        e.preventDefault();
+        if(!$(this).hasClass("show")){
+            $(this).parents(".input-group").find("input").attr("type","text");
+            $(this).find(".fa").removeClass("fa-eye").addClass("fa-eye-slash");
+            $(this).addClass("show");
         }
-        reader.readAsDataURL(input.files[0]);
-    }
-  }
+        else{
+            $(this).parents(".input-group").find("input").attr("type","password");
+            $(this).find(".fa").removeClass("fa-eye-slash").addClass("fa-eye");
+            $(this).removeClass("show");
+        }
+    });
 
-  // Input Hanya Nomor
-  $(document).on("keypress", ".number-only", function(e){
-      var charCode = (e.which) ? e.which : e.keyCode;
-      if (charCode >= 48 && charCode <= 57) { 
-          // 0-9 only
-          return true;
-      }
-      else{
-          return false;
-      }
-  });
-  
-  // Button Toggle Password
-  $(document).on("click", ".btn-toggle-password", function(e){
-      e.preventDefault();
-      if($(this).find("i").hasClass("fa-eye")){
-          $(this).find("i").removeClass("fa-eye").addClass("fa-eye-slash");
-          $("input[name=password]").attr("type","text");
-      }
-      else{
-          $(this).find("i").addClass("fa-eye").removeClass("fa-eye-slash");
-          $("input[name=password]").attr("type","password");
-      }
-  });
+    // Input Hanya Nomor
+    $(document).on("keypress", ".number-only", function(e){
+        var charCode = (e.which) ? e.which : e.keyCode;
+        if (charCode >= 48 && charCode <= 57) { 
+            // 0-9 only
+            return true;
+        }
+        else{
+            return false;
+        }
+    });
 </script>
-
-@endsection
-
-@section('css-extra')
-
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/plugins/croppie/croppie.css') }}">
 
 @endsection

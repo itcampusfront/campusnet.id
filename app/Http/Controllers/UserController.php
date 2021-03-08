@@ -20,7 +20,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->role == role_admin() || Auth::user()->role == role_manager()){
+        if(Auth::user()->role == role_admin()){
             // Data user
             $user = User::join('role','users.role','=','role.id_role')->orderBy('role','asc')->get();
 
@@ -42,14 +42,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        if(Auth::user()->role == role_admin() || Auth::user()->role == role_manager()){
-            // Data role
-            $role = Role::all();
-
+        if(Auth::user()->role == role_admin()){
             // View
-            return view('admin/user/create', [
-                'role' => $role
-            ]);
+            return view('admin/user/create');
         }
         else{
             // View
@@ -68,14 +63,11 @@ class UserController extends Controller
         // Validasi
         $validator = Validator::make($request->all(), [
             'nama_user' => 'required|max:200',
-            'tanggal_lahir' => 'required',
-            'jenis_kelamin' => 'required',
             'email' => 'required|string|email|max:200|unique:users',
-            'nomor_hp' => 'required|numeric',
             'username' => 'required|string|alpha_dash|max:200|unique:users',
+            'nomor_hp' => 'required|numeric',
             'password' => 'required|min:6',
-            'role' => 'required',
-            'status' => 'required',
+            'role' => 'required'
         ], array_validation_messages());
         
         // Mengecek jika ada error
@@ -83,32 +75,24 @@ class UserController extends Controller
             // Kembali ke halaman sebelumnya dan menampilkan pesan error
             return redirect()->back()->withErrors($validator->errors())->withInput($request->only([
                 'nama_user',
-                'tanggal_lahir',
-                'jenis_kelamin',
-                'username',
                 'email',
+                'username',
                 'nomor_hp',
                 'role',
-                'status',
             ]));
         }
         // Jika tidak ada error
         else{
-			// Upload gambar
-            $image_name = $request->gambar != '' ? upload_file($request->gambar, "assets/images/user/") : '';
-
             // Menambah data
             $user = new User;
             $user->nama_user = $request->nama_user;
-            $user->tanggal_lahir = generate_date_format($request->tanggal_lahir, '-');
-            $user->jenis_kelamin = $request->jenis_kelamin;
             $user->email = $request->email;
             $user->nomor_hp = $request->nomor_hp;
             $user->username = $request->username;
             $user->password = bcrypt($request->password);
-            $user->foto = $request->gambar != '' ? $image_name : '';
+            $user->foto = '';
             $user->role = $request->role;
-            $user->status = $request->status;
+            $user->status = 1;
             $user->email_verified = 1;
             $user->last_visit = null;
             $user->register_at = date('Y-m-d H:i:s');
@@ -135,13 +119,13 @@ class UserController extends Controller
             }
 
             // View
-            return view('front/user/profile', [
+            return view('member/user/profile', [
             	'user' => $user,
             ]);
         }
         else{
             // Redirect Login
-            session()->put('url.intended', url()->to('/profil'));
+            session()->put('url.intended', url()->to('/member/profil'));
             return redirect('/login');
         }
     }
@@ -157,8 +141,6 @@ class UserController extends Controller
         // Validasi
         $validator = Validator::make($request->all(), [
             'nama_user' => 'required|max:200',
-            'tanggal_lahir' => 'required',
-            'jenis_kelamin' => 'required',
             'nomor_hp' => 'required|numeric',
         ], array_validation_messages());
         
@@ -167,8 +149,6 @@ class UserController extends Controller
             // Kembali ke halaman sebelumnya dan menampilkan pesan error
             return redirect()->back()->withErrors($validator->errors())->withInput($request->only([
                 'nama_user',
-                'tanggal_lahir',
-                'jenis_kelamin',
                 'nomor_hp',
             ]));
         }
@@ -177,14 +157,12 @@ class UserController extends Controller
             // Mengupdate data
             $user = User::find(Auth::user()->id_user);
             $user->nama_user = $request->nama_user;
-            $user->tanggal_lahir = generate_date_format($request->tanggal_lahir, '-');
-            $user->jenis_kelamin = $request->jenis_kelamin;
             $user->nomor_hp = $request->nomor_hp;
             $user->save();
         }
 
         // Redirect
-        return redirect('/profil')->with(['message' => 'Berhasil mengupdate profil.']);
+        return redirect('/member/profil')->with(['message' => 'Berhasil mengupdate profil.']);
     }
 
     /**
@@ -300,9 +278,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        if(Auth::user()->role == role_admin() || Auth::user()->role == role_manager()){
+        if(Auth::user()->role == role_admin()){
         	// Data user
-        	$user = user::find($id);
+        	$user = User::find($id);
 
             if(!$user){
                 abort(404);
@@ -330,8 +308,6 @@ class UserController extends Controller
         // Validasi
         $validator = Validator::make($request->all(), [
             'nama_user' => 'required|max:200',
-            'tanggal_lahir' => 'required',
-            'jenis_kelamin' => 'required',
             'email' => [
                 'required', 'string', 'email', 'max:200', Rule::unique('users')->ignore($request->id, 'id_user')
             ],
@@ -347,8 +323,6 @@ class UserController extends Controller
             // Kembali ke halaman sebelumnya dan menampilkan pesan error
             return redirect()->back()->withErrors($validator->errors())->withInput($request->only([
                 'nama_user',
-                'tanggal_lahir',
-                'jenis_kelamin',
                 'username',
                 'email',
                 'nomor_hp',
@@ -357,18 +331,16 @@ class UserController extends Controller
         // Jika tidak ada error
         else{
 			// Upload gambar
-            $image_name = $request->gambar != '' ? upload_file($request->gambar, "assets/images/user/") : '';
+            // $image_name = $request->gambar != '' ? upload_file($request->gambar, "assets/images/user/") : '';
 
             // Mengupdate data
             $user = User::find($request->id);
             $user->nama_user = $request->nama_user;
-            $user->tanggal_lahir = generate_date_format($request->tanggal_lahir, '-');
-            $user->jenis_kelamin = $request->jenis_kelamin;
             $user->email = $request->email;
             $user->nomor_hp = $request->nomor_hp;
             $user->username = $request->username;
             $user->password = $request->password != '' ? bcrypt($request->password) : $user->password;
-            $user->foto = $request->gambar != '' ? $image_name : $user->foto;
+            // $user->foto = $request->gambar != '' ? $image_name : $user->foto;
             $user->save();
         }
 

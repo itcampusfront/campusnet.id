@@ -117,9 +117,9 @@ class LoginController extends Controller
         $account->save();
 
         // Redirect to URL intended
-        // if(session()->get('url.intended') != null){
-        //     return redirect()->intended();
-        // }
+        if(session()->get('url.intended') != null){
+            return redirect()->intended();
+        }
 
         // Redirect
         if($user->role == role_admin())
