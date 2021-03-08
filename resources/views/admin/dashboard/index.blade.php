@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="content">
-  <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
+  <!-- <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
       <div class="media">
           <img width="150" class="mr-4" src="{{asset('assets/images/ilustrasi/undraw_social_friends_nsbv.svg')}}">
           <div class="media-body">
@@ -15,7 +15,7 @@
               <button class="btn btn-theme-2 rounded-3 px-3">Order Sekarang</button>
           </div>
       </div>
-  </div>
+  </div> -->
   <div class="detail mb-4">
       <div class="row">
           <div class="col-12 col-md-6 col-lg-3">
@@ -24,7 +24,7 @@
                       <p class="m-0">Pengguna Baru</p>
                   </div>
                     <div class="card-body">
-                        <h1>2</h1>
+                        <h1>{{ $count_user }}</h1>
                     </div>
               </div>
           </div>
@@ -34,7 +34,7 @@
                       <p class="m-0">Website Baru</p>
                   </div>
                     <div class="card-body">
-                        <h1>2</h1>
+                        <h1>{{ $count_website }}</h1>
                     </div>
               </div>
           </div>
@@ -44,7 +44,7 @@
                       <p class="m-0">Menunggu Pembayaran</p>
                   </div>
                     <div class="card-body">
-                        <h1>2</h1>
+                        <h1>0</h1>
                     </div>
               </div>
           </div>
@@ -54,7 +54,7 @@
                       <p class="m-0">Transaksi Berhasil</p>
                   </div>
                     <div class="card-body">
-                        <h1>2</h1>
+                        <h1>{{ $count_website }}</h1>
                     </div>
               </div>
           </div>
@@ -63,11 +63,11 @@
   <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
       <h5>Website Kamu</h5>
       <div class="list-group list-group-flush">
-          <a class="list-group-item" href="#"><i class="fas fa-globe-asia mr-3"></i> www.something.com</a>
-          <a class="list-group-item" href="#"><i class="fas fa-globe-asia mr-3"></i> www.something.com</a>
-          <a class="list-group-item" href="#"><i class="fas fa-globe-asia mr-3"></i> www.something.com</a>
-          <a class="list-group-item" href="#"><i class="fas fa-globe-asia mr-3"></i> www.something.com</a>
-          <a class="list-group-item" href="#"><i class="fas fa-globe-asia mr-3"></i> www.something.com</a>
+        @if(count($website)>0)
+            @foreach($website as $data)
+                <a class="list-group-item" href="/admin/website/detail/{{ $data->id_website }}"><i class="fas fa-globe-asia mr-3"></i>{{ $data->website_url }}</a>
+            @endforeach
+        @endif
       </div>
   </div>
 </div>

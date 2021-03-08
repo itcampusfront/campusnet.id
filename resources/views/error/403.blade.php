@@ -16,7 +16,7 @@
         <h1 data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">3</h1>
       </div>
       <h5 class="text-capitalize mb-4" data-aos="fade-up" data-aos-duration="2500">We are Sorry, but the page you are requested was <span style="color: rgba(0,0,0,.2);" class="fw-bold">restricted access</span></h5> 
-      <a data-aos="fade-up" data-aos-duration="3000" href="<?php echo home_url() ?>" class="btn btn-theme text-uppercase btn-theme-1 me-2">Home</a>
+      <a data-aos="fade-up" data-aos-duration="3000" href="/" class="btn btn-theme text-uppercase btn-theme-1 me-2">Home</a>
     </div>
     <p class="position-absolute start-50 translate-middle" style="top: 96%">Made with <i class="fa fa-heart" style="font-size: .8rem; color: rgba(230, 57, 70, 1);"></i></p>
   </div>

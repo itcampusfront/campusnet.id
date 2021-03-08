@@ -4,6 +4,13 @@
 
 @section('content')
 
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/admin"><i class="fas fa-tachometer-alt"></i></a></li>
+        <li class="breadcrumb-item"><a href="/admin/website">Website</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data Website</li>
+    </ol>
+</nav>
 <div class="content">
     <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
         <h5>Data Website</h5>

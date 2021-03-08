@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use App\Kategori;
-use App\Kelas;
+use App\Fitur;
+use App\Testimoni;
 use App\User;
+use App\Website;
 
 class DashboardController extends Controller
 {
@@ -20,8 +21,21 @@ class DashboardController extends Controller
      */
     public function admin()
     {
+        // Count data user
+        $count_user = User::where('role','=',role_member())->where('status','=',1)->count();
+
+        // Count data website
+        $count_website = Website::join('users','website.id_user','=','users.id_user')->where('users.status','=',1)->count();
+
+        // Data website
+        $website = Website::join('users','website.id_user','=','users.id_user')->where('users.status','=',1)->orderBy('website_at','desc')->limit(5)->get();
+
         // View
-        return view('admin/dashboard/index');
+        return view('admin/dashboard/index', [
+            'count_user' => $count_user,
+            'count_website' => $count_website,
+            'website' => $website,
+        ]);
     }
 
     /**
@@ -31,8 +45,13 @@ class DashboardController extends Controller
      */
     public function member()
     {
+        // Data website
+        $website = Website::join('users','website.id_user','=','users.id_user')->where('website.id_user','=',Auth::user()->id_user)->where('users.status','=',1)->get();
+
         // View
-        return view('member/dashboard/index');
+        return view('member/dashboard/index', [
+            'website' => $website
+        ]);
     }
 
     /**
@@ -42,24 +61,16 @@ class DashboardController extends Controller
      */
     public function home()
     {
-        // Data kategori
-        $kategori = Kategori::orderBy('kategori_at','desc')->limit(4)->get();
+        // Data fitur
+        $fitur = Fitur::orderBy('order_fitur','asc')->get();
 
-        // Count kelas berdasarkan kategori
-        if(count($kategori)>0){
-            foreach($kategori as $key=>$data){
-                $count = Kelas::join('kategori','kelas.kategori_kelas','=','kategori.id_kategori')->join('users','kelas.pengajar_kelas','=','users.id_user')->join('level','kelas.level_kelas','=','level.id_level')->where('kelas.kategori_kelas','=',$data->id_kategori)->count();
-                $kategori[$key]->count_kelas = $count;
-            }
-        }
-
-        // Data kelas
-        $kelas = Kelas::join('kategori','kelas.kategori_kelas','=','kategori.id_kategori')->join('users','kelas.pengajar_kelas','=','users.id_user')->join('level','kelas.level_kelas','=','level.id_level')->orderBy('kelas_at','desc')->limit(8)->get();
+        // Data testimoni
+        $testimoni = Testimoni::orderBy('order_testimoni','asc')->get();
 
         // View
-        return view('front/dashboard/index', [
-            'kategori' => $kategori,
-            'kelas' => $kelas
+        return view('front/home', [
+            'fitur' => $fitur,
+            'testimoni' => $testimoni,
         ]);
     }
 }

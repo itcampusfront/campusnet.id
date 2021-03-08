@@ -176,24 +176,37 @@ class WebsiteController extends Controller
     }
 
     /**
-     * Menampilkan form edit kategori
+     * Menampilkan detail website
      *
      * int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function detail($id)
     {
-        if(Auth::user()->role == role_admin() || Auth::user()->role == role_manager()){
-        	// Data kategori
-        	$kategori = Kategori::find($id);
+        if(Auth::user()->role == role_admin()){
+        	// Data website
+        	$website = Website::join('users','website.id_user','=','users.id_user')->find($id);
 
-            if(!$kategori){
+            if(!$website){
                 abort(404);
             }
 
             // View
-            return view('admin/kategori/edit', [
-            	'kategori' => $kategori,
+            return view('admin/website/detail', [
+            	'website' => $website,
+            ]);
+        }
+        elseif(Auth::user()->role == role_member()){
+        	// Data website
+        	$website = Website::join('users','website.id_user','=','users.id_user')->where('website.id_user','=',Auth::user()->id_user)->find($id);
+
+            if(!$website){
+                abort(404);
+            }
+
+            // View
+            return view('member/website/detail', [
+            	'website' => $website,
             ]);
         }
         else{
@@ -203,50 +216,7 @@ class WebsiteController extends Controller
     }
 
     /**
-     * Mengupdate kategori
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request)
-    {
-        // Validasi
-        $validator = Validator::make($request->all(), [
-            'nama_kategori' => 'required|max:200',
-        ], array_validation_messages());
-        
-        // Mengecek jika ada error
-        if($validator->fails()){
-            // Kembali ke halaman sebelumnya dan menampilkan pesan error
-            return redirect()->back()->withErrors($validator->errors())->withInput();
-        }
-        // Jika tidak ada error
-        else{
-			// Upload gambar
-            $image_name = $request->gambar != '' ? upload_file($request->gambar, "assets/images/kategori/") : '';
-
-            // Permalink
-            $permalink = generate_permalink($request->nama_kategori);
-            $i = 1;
-            while(count_existing_data('kategori', 'slug_kategori', $permalink, 'id_kategori', $request->id) > 0){
-                $permalink = rename_permalink(generate_permalink($request->nama_kategori), $i);
-                $i++;
-            }
-
-            // Mengupdate data
-            $kategori = Kategori::find($request->id);
-            $kategori->nama_kategori = $request->nama_kategori;
-            $kategori->slug_kategori = $permalink;
-            $kategori->gambar_kategori = $request->gambar != '' ? $image_name : $kategori->gambar_kategori;
-            $kategori->save();
-        }
-
-        // Redirect
-        return redirect('/admin/kategori')->with(['message' => 'Berhasil mengupdate data.']);
-    }
-
-    /**
-     * Menghapus kategori
+     * Menghapus website
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -254,10 +224,10 @@ class WebsiteController extends Controller
     public function delete(Request $request)
     {
     	// Menghapus data
-        $kategori = Kategori::find($request->id);
-        $kategori->delete();
+        $website = Website::find($request->id);
+        $website->delete();
 
         // Redirect
-        return redirect('/admin/kategori')->with(['message' => 'Berhasil menghapus data.']);
+        return redirect('/admin/website')->with(['message' => 'Berhasil menghapus data.']);
     }
 }
