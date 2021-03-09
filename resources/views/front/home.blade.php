@@ -59,7 +59,7 @@
                     @foreach($fitur as $data)
                         <div class="col-md-6 col-lg-4">
                             <div class="card border-0 rounded-3 shadow-sm mb-4">
-                                <img class="shadow rounded-3" src="{{ asset('assets/images/fitur/'.$data->gambar_fitur) }}">
+                                <img class="shadow rounded-3 img-fluid" src="{{ asset('assets/images/fitur/'.$data->gambar_fitur) }}">
                                 <div class="card-body">
                                     <h5>{{ $data->nama_fitur }}</h5>
                                     <p class="m-0">{{ $data->deskripsi_fitur }}</p>
