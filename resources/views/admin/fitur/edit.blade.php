@@ -5,15 +5,18 @@
 @section('content')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb rounded-3 px-4">
         <li class="breadcrumb-item"><a href="/admin"><i class="fas fa-tachometer-alt"></i></a></li>
         <li class="breadcrumb-item"><a href="/admin/fitur">Fitur</a></li>
         <li class="breadcrumb-item active" aria-current="page">Edit Fitur</li>
     </ol>
 </nav>
 <div class="content">
-    <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
-        <h5>Edit Fitur</h5>
+    <div class="card border-0 rounded-3 shadow-sm mb-4">
+        <div class="card-header bg-theme-1 rounded-3 shadow border-0 d-flex justify-content-between align-items-center">
+            <h5 class="my-2">Edit Fitur</h5>
+        </div>
+        <div class="card-body">
         <form method="post" action="/admin/fitur/update">
             {{ csrf_field() }}
             <input type="hidden" name="id" value="{{ $fitur->id_fitur }}">
@@ -55,6 +58,7 @@
                 </div>
             </div>
         </form>
+        </div>
     </div>
 </div>
 

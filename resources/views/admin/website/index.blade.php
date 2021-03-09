@@ -5,15 +5,18 @@
 @section('content')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb rounded-3 px-4">
         <li class="breadcrumb-item"><a href="/admin"><i class="fas fa-tachometer-alt"></i></a></li>
         <li class="breadcrumb-item"><a href="/admin/website">Website</a></li>
         <li class="breadcrumb-item active" aria-current="page">Data Website</li>
     </ol>
 </nav>
 <div class="content">
-    <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
-        <h5>Data Website</h5>
+    <div class="card border-0 rounded-3 shadow-sm mb-4">
+        <div class="card-header bg-theme-1 rounded-3 shadow border-0 d-flex justify-content-between align-items-center">
+            <h5 class="my-2">Data Website</h5>
+        </div>
+        <div class="card-body">
         @if(Session::get('message'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ Session::get('message') }}
@@ -77,6 +80,7 @@
                     @endif
                 </tbody>
             </table>
+        </div>
         </div>
     </div>
 </div>

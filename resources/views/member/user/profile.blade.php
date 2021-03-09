@@ -5,14 +5,17 @@
 @section('content')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb rounded-3 px-4">
         <li class="breadcrumb-item"><a href="/member"><i class="fas fa-tachometer-alt"></i></a></li>
         <li class="breadcrumb-item active" aria-current="page">Profil</li>
     </ol>
 </nav>
 <div class="content">
-    <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
-        <h5>Profil</h5>
+    <div class="card border-0 rounded-3 shadow-sm mb-4">
+        <div class="card-header bg-theme-1 rounded-3 shadow border-0 d-flex justify-content-between align-items-center">
+            <h5 class="my-2">Profil</h5>
+        </div>
+        <div class="card-body">
         @if(Session::get('message'))
         <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
             {{ Session::get('message') }}
@@ -63,10 +66,11 @@
             <div class="form-group row">
                 <label class="col-md-2 col-form-label"></label>
                 <div class="col-md-10">
-                    <button type="submit" class="btn btn-theme-1">Simpan</button>
+                    <button type="submit" class="btn btn-theme-1 rounded-3 px-3">Simpan</button>
                 </div>
             </div>
         </form>
+        </div>
     </div>
 </div>
   

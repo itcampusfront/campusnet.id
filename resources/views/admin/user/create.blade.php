@@ -1,25 +1,28 @@
 @extends('template/admin/main')
 
-@section('title', 'Tambah User')
+@section('title', 'Tambah Pengguna')
 
 @section('content')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb rounded-3 px-4">
         <li class="breadcrumb-item"><a href="/admin"><i class="fas fa-tachometer-alt"></i></a></li>
-        <li class="breadcrumb-item"><a href="/admin/user">User</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Tambah User</li>
+        <li class="breadcrumb-item"><a href="/admin/user">Pengguna</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Tambah Pengguna</li>
     </ol>
 </nav>
 <div class="content">
-    <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
-        <h5>Tambah User</h5>
+    <div class="card border-0 rounded-3 shadow-sm mb-4">
+        <div class="card-header bg-theme-1 rounded-3 shadow border-0 d-flex justify-content-between align-items-center">
+            <h5 class="my-2">Tambah Pengguna</h5>
+        </div>
+        <div class="card-body">
         <form method="post" action="/admin/user/store">
             {{ csrf_field() }}
             <div class="form-group row">
                 <label class="col-md-2 col-form-label">Nama Lengkap <span class="text-danger">*</span></label>
                 <div class="col-md-10">
-                    <input type="text" name="nama_user" class="form-control {{ $errors->has('nama_user') ? 'border-danger' : '' }}" value="{{ old('nama_user') }}" placeholder="Masukkan Nama User">
+                    <input type="text" name="nama_user" class="form-control {{ $errors->has('nama_user') ? 'border-danger' : '' }}" value="{{ old('nama_user') }}" placeholder="Masukkan Nama Pengguna">
                     @if($errors->has('nama_user'))
                     <div class="small text-danger">{{ ucfirst($errors->first('nama_user')) }}</div>
                     @endif
@@ -85,10 +88,11 @@
             <div class="form-group row">
                 <label class="col-md-2 col-form-label"></label>
                 <div class="col-md-10">
-                    <button type="submit" class="btn btn-theme-1">Simpan</button>
+                    <button type="submit" class="btn btn-theme-1 rounded-3 px-3">Simpan</button>
                 </div>
             </div>
         </form>
+        </div>
     </div>
 </div>
   

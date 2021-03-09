@@ -9,50 +9,52 @@
         <title>Daftar | {{ get_website_name() }}</title>
     </head>
     <body class="bg-light">
-        <section class="my-5 py-5">
-            <div class="container d-flex justify-content-center align-items-center">
-                <div class="row">
-                    <div class="col-md-6 d-none d-md-flex">
-                        <img class="img-fluid px-5" src="{{asset(('assets/images/ilustrasi/undraw_Online_learning_re_qw08.svg'))}}">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card border-0 shadow-sm rounded-3">
-                            <div class="card-header text-center bg-theme-1 rounded-3 border-0 shadow">
-                                <h1 class="m-0">Daftar</h1>
-                            </div>
-                            <div class="card-body p-5">
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-lg-6 vh-100 d-none d-lg-block">
+                <div class="wrapper text-center">
+                    <img class="w-75" src="{{asset(('assets/images/ilustrasi/undraw_Login_re_4vu2 .svg'))}}">
+                </div>
+            </div>
+            <div class="col-lg-6 vh-100">
+                <div class="wrapper">
+                    <div class="card border-0 shadow-sm rounded-2">
+                        <div class="card-header mx-3 bg-transparent text-center">
+                            <h5 class="m-0 h2 color-theme-1">Daftar</h5>
+                        </div>
+                            <div class="card-body">
                                 <form class="login-form" action="/register" method="post">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <label class="control-label">NAMA LENGKAP</label>
+                                        <label class="control-label">Nama Lengkap</label>
                                         <input class="form-control {{ $errors->has('nama_lengkap') ? 'is-invalid' : '' }}" name="nama_lengkap" type="text" placeholder="Masukkan Nama Lengkap" autofocus>
                                         @if($errors->has('nama_lengkap'))
                                         <div class="form-control-feedback text-danger">{{ ucfirst($errors->first('nama_lengkap')) }}</div>
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label">EMAIL</label>
+                                        <label class="control-label">EmailL</label>
                                         <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" name="email" type="email" placeholder="Masukkan Email">
                                         @if($errors->has('email'))
                                         <div class="form-control-feedback text-danger">{{ ucfirst($errors->first('email')) }}</div>
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label">NOMOR HP</label>
+                                        <label class="control-label">Nomor HP</label>
                                         <input class="form-control {{ $errors->has('nomor_hp') ? 'is-invalid' : '' }} number-only" name="nomor_hp" type="text" placeholder="Masukkan Nomor HP">
                                         @if($errors->has('nomor_hp'))
                                         <div class="form-control-feedback text-danger">{{ ucfirst($errors->first('nomor_hp')) }}</div>
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label">USERNAME</label>
+                                        <label class="control-label">Nama Pengguna</label>
                                         <input class="form-control {{ $errors->has('username') ? 'is-invalid' : '' }}" name="username" type="text" placeholder="Masukkan Username">
                                         @if($errors->has('username'))
                                         <div class="form-control-feedback text-danger">{{ ucfirst($errors->first('username')) }}</div>
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label">PASSWORD</label>
+                                        <label class="control-label">Password</label>
                 						<div class="input-group">
                 							<input type="password" name="password" class="form-control {{ $errors->has('password') ? 'border-danger' : '' }}" placeholder="Masukkan Password">
                 							<div class="input-group-append">
@@ -64,7 +66,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label">KONFIRMASI PASSWORD</label>
+                                        <label class="control-label">Konfirmasi Password</label>
                 						<div class="input-group">
                 							<input type="password" name="password_confirmation" class="form-control {{ $errors->has('password') ? 'border-danger' : '' }}" placeholder="Konfirmasi Password">
                 							<div class="input-group-append">
@@ -86,6 +88,9 @@
             </div>
         </section>
     </body>
+    <style type="text/css">
+        .wrapper{ width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    </style>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

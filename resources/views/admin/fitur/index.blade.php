@@ -5,16 +5,19 @@
 @section('content')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb rounded-3 px-4">
         <li class="breadcrumb-item"><a href="/admin"><i class="fas fa-tachometer-alt"></i></a></li>
         <li class="breadcrumb-item"><a href="/admin/fitur">Fitur</a></li>
         <li class="breadcrumb-item active" aria-current="page">Data Fitur</li>
     </ol>
 </nav>
 <div class="content">
-    <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
-        <h5>Data Fitur</h5>
-        <a href="/admin/fitur/create" class="btn btn-sm btn-theme-1 mb-2">Tambah Fitur</a>
+    <div class="card border-0 rounded-3 shadow-sm mb-4">
+        <div class="card-header bg-theme-1 rounded-3 shadow border-0 d-flex justify-content-between align-items-center">
+            <h5 class="my-2">Data Fitur</h5>
+            <a href="/admin/fitur/create" class="btn btn-light rounded-3 opacity-1">Tambah Fitur</a>
+        </div>
+        <div class="card-body">
         @if(Session::get('message'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ Session::get('message') }}
@@ -45,6 +48,7 @@
         @else
         <div class="alert alert-danger text-center">Tidak ada fitur.</div>
         @endif
+        </div>
     </div>
 </div>
   

@@ -5,15 +5,18 @@
 @section('content')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb rounded-3 px-4">
         <li class="breadcrumb-item"><a href="/member"><i class="fas fa-tachometer-alt"></i></a></li>
         <li class="breadcrumb-item"><a href="/member/website">Website</a></li>
         <li class="breadcrumb-item active" aria-current="page">Detail Website</li>
     </ol>
 </nav>
 <div class="content">
-    <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
-        <h5>Detail Website</h5>
+    <div class="card border-0 rounded-3 shadow-sm mb-4">
+        <div class="card-header bg-theme-1 rounded-3 shadow border-0 d-flex justify-content-between align-items-center">
+            <h5 class="my-2">Tambah Website</h5>
+        </div>
+        <div class="card-body">
         <div class="table-responsive mt-4">
             <table id="table" class="table">
                 <tbody>
@@ -41,7 +44,7 @@
                     <tr>
                         <td>Login Admin</td>
                         <td>:</td>
-                        <td><a class="btn btn-sm btn-theme-1" href="{{ $website->website_url }}/login" target="_blank">Login Admin</a></td>
+                        <td><a class="btn btn-sm btn-theme-1 rounded-3 px-3" href="{{ $website->website_url }}/login" target="_blank">Login Admin</a></td>
                     </tr>
                     <tr>
                         <td>Akun Admin</td>
@@ -58,6 +61,7 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
         </div>
     </div>
 </div>

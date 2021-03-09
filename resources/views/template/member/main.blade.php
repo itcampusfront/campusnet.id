@@ -6,12 +6,12 @@
 </head>
 <body style="background-color: #f8f9fa" id="home">
     @include('template/member/_header')
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col-3 vh-100 py-4">
+            <div class="col-lg-3 py-4 d-none d-lg-block">
                 @include('template/member/_sidebar')
             </div>
-            <div class="col-9 py-4">
+            <div class="col-lg-9 py-4">
                 @yield('content')
             </div>
         </div>

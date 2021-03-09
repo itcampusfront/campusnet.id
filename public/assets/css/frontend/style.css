@@ -8,23 +8,30 @@
 }
 /**{border: 1px solid red}*/
 html {scroll-behavior: smooth;}
-a{color: var(--color-1); transition: var(--transition)}
-a:hover{color: var(--color-1)}
+a{color: var(--color-1); transition: var(--transition); opacity: .75; text-decoration: none;}
+a:hover{color: var(--color-1); text-decoration: none; opacity: 1}
 body{color: var(--color-theme-2)!important}
 .btn-theme{padding: 1em 2em}
 .btn-theme-1{background-color: var(--color-1); color: #fff; transition: var(--transition)}
 .btn-theme-1:hover{background-color: var(--color-1); color: #fff; opacity: .8}
-.btn-theme-2{background-color: var(--color-2); color: #fff}
+.btn-theme-2{background-color: var(--color-2); color: #fff; transition: var(--transition)}
 .btn-theme-2:hover{background-color: var(--color-2); color: #fff; opacity: .8}
 .bg-theme-1{background-color: var(--color-1); color: #fff}
 .bg-theme-2{background-color: var(--color-2); color: #fff}
-.color-theme-1{color: var(--color-1);}
+.color-theme-1{color: var(--color-1)}
 .color-theme-2{color: var(--color-2)}
 .rounded-1{border-radius: .5em!important}
 .rounded-2{border-radius: 1em!important}
 .rounded-3{border-radius: 1.5em!important}
 .rounded-4{border-radius: 2em!important}
 .rounded-5{border-radius: 2.5em!important}
+.opacity-0{opacity: unset}
+.opacity-1{opacity: .15}
+.opacity-2{opacity: .3}
+.opacity-3{opacity: .5}
+.opacity-4{opacity: .65}
+.opacity-5{opacity: .8}
+.opacity-6{opacity: 1}
 /*end*/
 
 .wrap{padding-top: 4.5em}
@@ -39,20 +46,21 @@ body{color: var(--color-theme-2)!important}
   overflow: hidden;
   background-attachment: fixed;}
 .img-overlay-1{
-  background: url("../../../assets/images/banner/1.1.png");
+  background: url("../../../assets/images/banner/1.1.webp");
   height: 600px;
   width: 100%;
   filter: blur(8px);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;}
-.img-overlay-2{
-  background: url("assets/images/businessman-showing-changes-report_1098-3504.jpg");
-  height: 600px;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;}
 .carousel-indicators li{height: 10px; width: 10px; border-radius: 100%;}
+.dropdown-user .dropdown-toggle::after {content: none;}
+.dropdown-user .dropdown-menu {min-width: 13rem;}
+.page-item.active .page-link {background-color: var(--color-1); border-color: var(--color-1)}
+.pp-dashboard{width: 100px; height: 100px}
 /*MQ*/
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+  .dropdown-profile{position: static; width: 100%}
+  .w-md-0{width: unset!important}
+  .pp-dashboard{width: 65px; height: 65px}
+}

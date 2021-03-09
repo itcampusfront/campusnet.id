@@ -5,16 +5,19 @@
 @section('content')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb rounded-3 px-4">
         <li class="breadcrumb-item"><a href="/admin"><i class="fas fa-tachometer-alt"></i></a></li>
-        <li class="breadcrumb-item"><a href="/admin/user">User</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Data User</li>
+        <li class="breadcrumb-item"><a href="/admin/user">Pengguna</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data Pengguna</li>
     </ol>
 </nav>
 <div class="content">
-    <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
-        <h5>Data User</h5>
-        <a href="/admin/user/create" class="btn btn-sm btn-theme-1">Tambah User</a>
+    <div class="card border-0 rounded-3 shadow-sm mb-4">
+        <div class="card-header bg-theme-1 rounded-3 shadow border-0 d-flex justify-content-between align-items-center">
+            <h5 class="m-0">Data Pengguna</h5>
+            <a href="/admin/user/create" class="btn btn-light opacity-1 rounded-3">Tambah Pengguna</a>
+        </div>
+        <div class="card-body">
         @if(Session::get('message'))
         <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
             {{ Session::get('message') }}
@@ -28,7 +31,7 @@
                 <thead>
                     <tr>
                         <th width="30">No.</th>
-                        <th>User</th>
+                        <th>Pengguna</th>
                         <th width="100">Role</th>
                         <th width="80">Status</th>
                         <th width="100">Waktu</th>
@@ -73,6 +76,7 @@
                 {{ csrf_field() }}
                 <input type="hidden" name="id">
             </form>
+        </div>
         </div>
     </div>
 </div>

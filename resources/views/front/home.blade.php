@@ -23,7 +23,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <img class="img-fluid rounded-3" src="{{asset('assets/images/banner/1.1.png')}}">
+                                <img class="img-fluid rounded-3" src="{{asset('assets/images/banner/1.1.webp')}}">
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                     <a href="https://demo.campusnet.id" class="btn btn-theme btn-theme-1 rounded-4" target="_blank">Lihat Demo</a>
                 </div>
                 <div class="col-md-6">
-                    <img class="img-fluid" src="{{asset('assets/images/ilustrasi/1.png')}}">
+                    <img class="img-fluid" src="{{asset('assets/images/ilustrasi/1.webp')}}">
                 </div>
             </div>
         </div>

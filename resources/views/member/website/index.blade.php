@@ -5,17 +5,19 @@
 @section('content')
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb rounded-3 px-4">
         <li class="breadcrumb-item"><a href="/member"><i class="fas fa-tachometer-alt"></i></a></li>
         <li class="breadcrumb-item"><a href="/member/website">Website</a></li>
         <li class="breadcrumb-item active" aria-current="page">Website Kamu</li>
     </ol>
 </nav>
 <div class="content">
-    @include('template/member/_order-now')
-    <div class="bg-white rounded-3 shadow-sm py-3 px-4 mb-4">
-        <h5>Website Kamu</h5>
-        <a href="/member/website/create" class="btn btn-sm btn-theme-1">Tambah Website</a>
+    <div class="card border-0 rounded-3 shadow-sm mb-4">
+        <div class="card-header bg-theme-1 rounded-3 shadow border-0 d-flex justify-content-between align-items-center">
+            <h5 class="m-0">Website</h5>
+            <a href="/member/website/create" class="btn btn-light opacity-0 rounded-3">Tambah Website</a>
+        </div>
+        <div class="card-body">
         @if(Session::get('message'))
         <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
             {{ Session::get('message') }}
@@ -59,6 +61,7 @@
                     @endif
                 </tbody>
             </table>
+        </div>
         </div>
     </div>
 </div>
