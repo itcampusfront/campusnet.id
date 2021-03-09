@@ -63,4 +63,6 @@ body{color: var(--color-theme-2)!important}
   .dropdown-profile{position: static; width: 100%}
   .w-md-0{width: unset!important}
   .pp-dashboard{width: 65px; height: 65px}
+  .vh-md-0{height: fit-content!important}
+  .register.wrapper{ width: unset!important; position: unset!important; top: unset!important; left: unset!important; transform: unset!important;}
 }

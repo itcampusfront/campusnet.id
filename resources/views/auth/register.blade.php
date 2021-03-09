@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
@@ -11,13 +13,13 @@
     <body class="bg-light">
     <section class="container my-5">
         <div class="row">
-            <div class="col-lg-6 vh-100 d-none d-lg-block">
+            <div class="col-12 col-lg-6 vh-100 d-none d-lg-block">
                 <div class="wrapper text-center">
                     <img class="w-75" src="{{asset(('assets/images/ilustrasi/undraw_Login_re_4vu2 .svg'))}}">
                 </div>
             </div>
-            <div class="col-lg-6 vh-100">
-                <div class="wrapper">
+            <div class="col-12 col-lg-6 vh-100 vh-md-0">
+                <div class="register wrapper">
                     <div class="card border-0 shadow-sm rounded-2">
                         <div class="card-header mx-3 bg-transparent text-center">
                             <h5 class="m-0 h2 color-theme-1">Daftar</h5>
@@ -78,7 +80,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group btn-container">
-                                        <button type="submit" class="btn btn-theme-2 btn-block rounded-3"><i class="fas fa-save fa-lg fa-fw mr-2"></i>Daftar</button>
+                                        <button type="submit" class="btn btn-theme-2 btn-block rounded-3">Daftar</button>
                                     </div>
                                 </form>
                             </div>
