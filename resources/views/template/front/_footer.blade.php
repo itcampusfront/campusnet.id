@@ -15,10 +15,10 @@
 						Menu
 					</li>
 					<li class="list-group-item bg-transparent border-0 px-0 pb-1">
-						<a class="color-theme-1 text-decoration-none" href="#">Tentang Kami</a>
+						<a class="text-dark text-decoration-none" href="#">Tentang Kami</a>
 					</li>
 					<li class="list-group-item bg-transparent border-0 px-0 pb-1">
-						<a class="color-theme-1 text-decoration-none" href="#">Program</a>
+						<a class="text-dark text-decoration-none" href="#">Program</a>
 					</li>
 				</ul>
 			</div>
@@ -28,10 +28,10 @@
 						Menu
 					</li>
 					<li class="list-group-item bg-transparent border-0 px-0 pb-1">
-						<a class="color-theme-1 text-decoration-none" href="#">Tentang Kami</a>
+						<a class="text-dark text-decoration-none" href="#">Tentang Kami</a>
 					</li>
 					<li class="list-group-item bg-transparent border-0 px-0 pb-1">
-						<a class="color-theme-1 text-decoration-none" href="#">Program</a>
+						<a class="text-dark text-decoration-none" href="#">Program</a>
 					</li>
 				</ul>
 			</div>
@@ -41,20 +41,20 @@
 						Kontak
 					</li>
 					<li class="list-group-item bg-transparent border-0 px-0">
-						<i class="color-theme-1 fab fa-youtube h3 pr-3"></i>
-						<i class="color-theme-1 fab fa-instagram h3 pr-3"></i>
-						<i class="color-theme-1 fab fa-facebook h3 pr-3"></i>
+						<i class="text-dark fab fa-youtube h3 pr-3"></i>
+						<i class="text-dark fab fa-instagram h3 pr-3"></i>
+						<i class="text-dark fab fa-facebook h3 pr-3"></i>
 					</li>
 					<li class="list-group-item bg-transparent border-0 px-0 pb-0">
-						<i class="fa fa-map-marker-alt position-absolute color-theme-1" style="font-size: 22px"></i>
+						<i class="fa fa-map-marker-alt position-absolute text-dark" style="font-size: 22px"></i>
 						<p class="mb-0" style="margin-left: 2em"> Jl Kedungmundu Raya 27 B Kota Semarang</p>
 					</li>
 					<li class="list-group-item bg-transparent border-0 px-0 pb-0">
-						<i class="fab fa-whatsapp position-absolute color-theme-1" style="font-size: 22px"></i>
+						<i class="fab fa-whatsapp position-absolute text-dark" style="font-size: 22px"></i>
 						<p class="mb-0" style="margin-left: 2em"> +62816343741</p>
 					</li>
 					<li class="list-group-item bg-transparent border-0 px-0 pb-0">
-						<i class="fa fa-envelope position-absolute color-theme-1" style="font-size: 22px"></i>
+						<i class="fa fa-envelope position-absolute text-dark" style="font-size: 22px"></i>
 						<p class="mb-0" style="margin-left: 2em"> info@campusnet.co.id</p>
 					</li>
 				</ul>

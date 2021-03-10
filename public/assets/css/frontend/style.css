@@ -8,8 +8,8 @@
 }
 /**{border: 1px solid red}*/
 html {scroll-behavior: smooth;}
-a{color: var(--color-1); transition: var(--transition); opacity: .75; text-decoration: none;}
-a:hover{color: var(--color-1); text-decoration: none; opacity: 1}
+a{color: var(--color-1); transition: var(--transition); text-decoration: none;}
+a:hover{color: var(--color-1); text-decoration: none;}
 body{color: var(--color-theme-2)!important}
 .btn-theme{padding: 1em 2em}
 .btn-theme-1{background-color: var(--color-1); color: #fff; transition: var(--transition)}
