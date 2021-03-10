@@ -3,9 +3,10 @@
     	<div class="row">
 			<div class="col-12 col-md-12 col-lg-3">
 				<a href="#" class="text-decoration-none">
-					<h1 style="font-family: 'Dancing Script', cursive;">
+					<!-- <h1 style="font-family: 'Dancing Script', cursive;">
 			            <span class="color-theme-1">Campus</span><span class="color-theme-2">net</span>
-			        </h1>
+			        </h1> -->
+			       	<img width="200" src="{{asset('assets/images/logo/campusnet.webp')}}">
 				</a>
 			</div>
 			<div class="col-12 col-md-4 col-lg-3">

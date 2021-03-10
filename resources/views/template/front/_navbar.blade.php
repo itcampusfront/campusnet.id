@@ -6,7 +6,8 @@
         </button>
         <a class="navbar-brand p-0" href="#home">
             <h1 style="font-family: 'Dancing Script', cursive;">
-                <span class="color-theme-1">Campus</span><span class="color-theme-2">net</span>
+                <!-- <span class="color-theme-1">Campus</span><span class="color-theme-2">net</span> -->
+                <img width="160" src="{{asset('assets/images/logo/campusnet.webp')}}">
             </h1>
         </a>    
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
