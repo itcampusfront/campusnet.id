@@ -69,21 +69,21 @@
       <img width="100" class="img-fluid d-none d-md-block" src="{{asset('assets/images/ilustrasi/undraw_social_friends_nsbv.svg')}}">
     </div>
     <div class="row">
-      <div class="col-12 col-sm-6 col-lg-4 mb-4 mb-lg-0">
-          @if(count($website)>0)
-              @foreach($website as $data)
-              <div class="card border-0 shadow-sm rounded-2">
-                <div class="card-header bg-transparent mx-3 px-0 ">
-                  <a href="/admin/website/detail/{{ $data->id_website }}">{{ $data->website_url }}</a>
-                </div>
-                <div class="card-body text-center">
-                  <button class="btn btn-theme-1 rounded-3 px-3">Lihat</button>
-                  <button class="btn btn-theme-2 rounded-3 px-3">Kelola</button>
-                </div>
+      @if(count($website)>0)
+          @foreach($website as $data)
+          <div class="col-12 col-sm-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="card border-0 shadow-sm rounded-2">
+              <div class="card-header bg-transparent mx-3 px-0 ">
+                <a href="/admin/website/detail/{{ $data->id_website }}">{{ $data->website_url }}</a>
               </div>
-              @endforeach
-          @endif
-      </div>
+              <div class="card-body text-center">
+                <button class="btn btn-theme-1 rounded-3 px-3">Lihat</button>
+                <button class="btn btn-theme-2 rounded-3 px-3">Kelola</button>
+              </div>
+            </div>
+          </div>
+          @endforeach
+      @endif
     </div>
   </section>
 </div>
