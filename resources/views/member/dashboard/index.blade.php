@@ -68,8 +68,8 @@
                               <a href="/member/website/detail/{{ $data->id_website }}">{{ $data->website_url }}</a>
                             </div>
                             <div class="card-body text-center">
-                              <button class="btn btn-theme-1 rounded-3 px-3">Lihat</button>
-                              <button class="btn btn-theme-2 rounded-3 px-3">Kelola</button>
+                                <a href="{{ $data->website_url }}" class="btn btn-theme-1 rounded-3 px-3" target="_blank">Lihat</a>
+                                <a href="/member/website/detail/{{ $data->id_website }}" class="btn btn-theme-2 rounded-3 px-3">Kelola</a>
                             </div>
                           </div>
                         </div>
