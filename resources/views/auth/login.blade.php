@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     @include('template/member/_head')
-    <title>Login | {{ get_website_name() }}</title>
 </head>
 <body class="bg-light">
 <section class="container">
