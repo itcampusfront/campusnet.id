@@ -18,7 +18,7 @@
   </div> -->
   <div class="detail mb-3">
       <div class="row">
-          <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
+          <div class="col-12 col-md-4 mb-3 mb-lg-0">
               <div class="card border-0 shadow-sm rounded-3 text-center">
                   <div class="card-header rounded-3 border-0 shadow" style="background-color: #f95738; color: #fff">
                       <p class="m-0">Pengguna Baru</p>
@@ -28,7 +28,7 @@
                     </div>
               </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
+          <div class="col-12 col-md-4 mb-3 mb-lg-0">
               <div class="card border-0 shadow-sm rounded-3 text-center">
                   <div class="card-header rounded-3 border-0 shadow" style="background-color: #0d3b66; color: #fff">
                       <p class="m-0">Website Baru</p>
@@ -38,7 +38,7 @@
                     </div>
               </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
+          <!-- <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
               <div class="card border-0 shadow-sm rounded-3 text-center">
                   <div class="card-header rounded-3 border-0 shadow" style="background-color: #ffd100; color: #fff">
                       <p class="m-0">Pembayaran</p>
@@ -47,8 +47,8 @@
                         <h1>0</h1>
                     </div>
               </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
+          </div> -->
+          <div class="col-12 col-md-4 mb-3 mb-lg-0">
               <div class="card border-0 shadow-sm rounded-3 text-center">
                   <div class="card-header rounded-3 border-0 shadow" style="background-color: #735d78; color: #fff">
                       <p class="m-0">Transaksi</p>

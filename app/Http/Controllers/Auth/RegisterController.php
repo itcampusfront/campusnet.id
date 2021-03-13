@@ -90,8 +90,8 @@ class RegisterController extends Controller
 		$user->nomor_hp = $data['nomor_hp'];
 		$user->foto = '';
 		$user->role = role_member();
-		$user->status = 0;
-		$user->email_verified = 0;
+		$user->status = 1;
+		$user->email_verified = 1;
         $user->last_visit = null;
 		$user->register_at = date('Y-m-d H:i:s');
 		$user->save();

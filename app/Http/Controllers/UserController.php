@@ -104,6 +104,33 @@ class UserController extends Controller
     }
 
     /**
+     * Menampilkan detail user
+     *
+     * int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function detail($id)
+    {
+        if(Auth::user()->role == role_admin()){
+        	// Data user
+        	$user = User::find($id);
+
+            if(!$user){
+                abort(404);
+            }
+
+            // View
+            return view('admin/user/detail', [
+            	'user' => $user,
+            ]);
+        }
+        else{
+            // View
+            return view('error/403');
+        }
+    }
+
+    /**
      * Menampilkan profil user
      *
      * @return \Illuminate\Http\Response

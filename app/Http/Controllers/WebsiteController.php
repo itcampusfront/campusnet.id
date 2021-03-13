@@ -84,7 +84,7 @@ class WebsiteController extends Controller
             $website = new Website;
             $website->id_user = Auth::user()->id_user;
             $website->website_key = '-';
-            $website->website_url = $request->website_url;
+            $website->website_url = is_int(strpos($request->website_url, 'https://')) ? $request->website_url : 'https://'.$request->website_url;
             $website->website_status = 2;
             $website->website_at = date('Y-m-d H:i:s');
             $website->save();

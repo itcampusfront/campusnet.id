@@ -15,7 +15,7 @@
     <div class="card border-0 rounded-3 shadow-sm mb-4">
         <div class="card-header bg-theme-1 rounded-3 shadow border-0 d-flex justify-content-between align-items-center">
             <h5 class="my-2">Data Fitur</h5>
-            <a href="/admin/fitur/create" class="btn btn-light rounded-3 opacity-1">Tambah Fitur</a>
+            <a href="/admin/fitur/create" class="btn btn-light opacity-0 rounded-3">Tambah Fitur</a>
         </div>
         <div class="card-body">
         @if(Session::get('message'))
