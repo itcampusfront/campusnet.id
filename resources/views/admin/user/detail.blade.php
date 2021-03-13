@@ -17,67 +17,40 @@
             <h5 class="my-2">Detail Pengguna</h5>
         </div>
         <div class="card-body">
-        <form method="post" action="/admin/user/update">
-            {{ csrf_field() }}
-            <input type="hidden" name="id" value="{{ $user->id_user }}">
-            <div class="form-group row">
-                <label class="col-md-2 col-form-label">Nama Lengkap <span class="text-danger">*</span></label>
-                <div class="col-md-10">
-                    <input type="text" name="nama_user" class="form-control {{ $errors->has('nama_user') ? 'border-danger' : '' }}" value="{{ $user->nama_user }}" placeholder="Masukkan Nama User">
-                    @if($errors->has('nama_user'))
-                    <div class="small text-danger">{{ ucfirst($errors->first('nama_user')) }}</div>
-                    @endif
+            <div class="row">
+                <div class="col-lg-auto">
+                  <img class="mb-2 rounded-2" width="150" src="{{ $user->foto != '' ? asset('assets/images/user/'.$user->foto) : asset('assets/images/default/user.jpg') }}">
+                </div>
+                <div class="col-lg-9">
+                  <p>Nama : {{ $user->nama_user }}</p>
+                  <p>Nomor HP : {{ $user->nomor_hp }}</p>
+                  <p>Username : {{ $user->username }}</p>
+                  <p>Email : {{ $user->email }}</p>
                 </div>
             </div>
-            <div class="form-group row">
-                <label class="col-md-2 col-form-label">Email <span class="text-danger">*</span></label>
-                <div class="col-md-10">
-                    <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'border-danger' : '' }}" value="{{ $user->email }}" placeholder="Masukkan Email">
-                    @if($errors->has('email'))
-                    <div class="small text-danger">{{ ucfirst($errors->first('email')) }}</div>
-                    @endif
-                </div>
+            <hr>
+            <div class="d-block d-md-flex justify-content-between">
+              <p>Bergabung Pada : {{ $user->register_at }}</p>
+              <p>Terahir Masuk : {{ $user->last_visit }}</p>
             </div>
-            <div class="form-group row">
-                <label class="col-md-2 col-form-label">Nomor HP <span class="text-danger">*</span></label>
-                <div class="col-md-10">
-                    <input type="text" name="nomor_hp" class="form-control number-only {{ $errors->has('nomor_hp') ? 'border-danger' : '' }}" value="{{ $user->nomor_hp }}" placeholder="Masukkan Nomor HP">
-                    @if($errors->has('nomor_hp'))
-                    <div class="small text-danger">{{ ucfirst($errors->first('nomor_hp')) }}</div>
-                    @endif
-                </div>
+        </div>
+    </div>
+    <div class="website-list">
+        <div class="Heading">
+            <h5>Website</h5>
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="card border-0 shadow-sm rounded-2 mb-3">
+              <div class="card-header bg-transparent mx-3 px-0 ">
+                <a href="#">Lorem Ipsum</a>
+              </div>
+              <div class="card-body text-center">
+                <a href="#" class="btn btn-theme-1 rounded-3 px-3" target="_blank">Lihat</a>
+                <a href="#" class="btn btn-theme-2 rounded-3 px-3">Kelola</a>
+              </div>
             </div>
-            <div class="form-group row">
-                <label class="col-md-2 col-form-label">Username <span class="text-danger">*</span></label>
-                <div class="col-md-10">
-                    <input type="text" name="username" class="form-control {{ $errors->has('username') ? 'border-danger' : '' }}" value="{{ $user->username }}" placeholder="Masukkan Username">
-                    @if($errors->has('username'))
-                    <div class="small text-danger">{{ ucfirst($errors->first('username')) }}</div>
-                    @endif
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-md-2 col-form-label">Password <span class="text-danger">*</span></label>
-                <div class="col-md-10">
-                    <div class="input-group">
-                        <input type="password" name="password" class="form-control {{ $errors->has('password') ? 'border-danger' : '' }}" placeholder="Masukkan Password">
-                        <div class="input-group-append">
-                            <a href="#" class="btn btn-toggle-password border-0 btn-theme-1 {{ $errors->has('password') ? 'border-danger' : 'btn-outline-secondary' }}"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                    <div class="small text-muted">Kosongi saja jika tidak ingin mengganti password.</div>
-                    @if($errors->has('password'))
-                    <div class="small text-danger">{{ ucfirst($errors->first('password')) }}</div>
-                    @endif
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-md-2 col-form-label"></label>
-                <div class="col-md-10">
-                    <button type="submit" class="btn btn-theme-1 px-3 rounded-3">Simpan</button>
-                </div>
-            </div>
-        </form>
+          </div>
         </div>
     </div>
 </div>
