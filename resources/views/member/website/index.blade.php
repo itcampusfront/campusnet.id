@@ -14,7 +14,7 @@
 <div class="content">
     <div class="card border-0 rounded-3 shadow-sm mb-4">
         <div class="card-header bg-theme-1 rounded-3 shadow border-0 d-flex justify-content-between align-items-center">
-            <h5 class="m-0">Website</h5>
+            <h5 class="m-0">Website Kamu</h5>
             <a href="/member/website/create" class="btn btn-light opacity-0 rounded-3">Tambah Website</a>
         </div>
         <div class="card-body">

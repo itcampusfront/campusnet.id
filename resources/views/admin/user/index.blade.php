@@ -15,7 +15,7 @@
     <div class="card border-0 rounded-3 shadow-sm mb-4">
         <div class="card-header bg-theme-1 rounded-3 shadow border-0 d-flex justify-content-between align-items-center">
             <h5 class="m-0">Data Pengguna</h5>
-            <a href="/admin/user/create" class="btn btn-light opacity-1 rounded-3">Tambah Pengguna</a>
+            <a href="/admin/user/create" class="btn btn-light opacity-0 rounded-3">Tambah Pengguna</a>
         </div>
         <div class="card-body">
         @if(Session::get('message'))
