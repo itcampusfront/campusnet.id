@@ -16,6 +16,7 @@
             </div>
         </div>
     </div>
+    @include('template/admin/_footer')
     @include('template/admin/_js')
     @yield('js-extra')
 </body>

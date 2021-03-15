@@ -12,26 +12,26 @@
 			<div class="col-12 col-md-4 col-lg-3">
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item bg-transparent border-0 px-0 font-weight-bold">
-						Menu
+						Tentang Kami
 					</li>
 					<li class="list-group-item bg-transparent border-0 px-0 pb-1">
-						<a class="text-dark text-decoration-none" href="#">Tentang Kami</a>
+						<a class="text-dark text-decoration-none" href="#">Tentang Campusnet</a>
 					</li>
 					<li class="list-group-item bg-transparent border-0 px-0 pb-1">
-						<a class="text-dark text-decoration-none" href="#">Program</a>
+						<a class="text-dark text-decoration-none" href="#">Bantuan</a>
 					</li>
 				</ul>
 			</div>
 			<div class="col-12 col-md-4 col-lg-3">
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item bg-transparent border-0 px-0 font-weight-bold">
-						Menu
+						Lainya
 					</li>
 					<li class="list-group-item bg-transparent border-0 px-0 pb-1">
-						<a class="text-dark text-decoration-none" href="#">Tentang Kami</a>
+						<a class="text-dark text-decoration-none" href="#">Syarat Ketentuan</a>
 					</li>
 					<li class="list-group-item bg-transparent border-0 px-0 pb-1">
-						<a class="text-dark text-decoration-none" href="#">Program</a>
+						<a class="text-dark text-decoration-none" href="#">Kebijakan Privasi</a>
 					</li>
 				</ul>
 			</div>

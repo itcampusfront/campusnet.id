@@ -27,6 +27,7 @@
             </div>
         </div>
     </div>
+    @include('template/member/_footer')
     @include('template/member/_js')
     @yield('js-extra')
 </body>
