@@ -47,6 +47,7 @@
                     <input type="hidden" name="gambar" id="src-img">
                     @if($errors->has('gambar'))
                     <div class="small text-danger">{{ ucfirst($errors->first('gambar')) }}</div>
+                    <canvas class="d-none" id="c" width="848" height="480"></canvas>
                     @endif
                 </div>
             </div>
@@ -128,11 +129,17 @@ $(document).on("click", "#btn-crop", function(e){
     demo.croppie("result", {
         type: "base64",
         format: "png",
-        size: "original",
-        quality: 1
+        size: {width: 848, height: 480},
     }).then(function(response){
-    $("#img-file").attr("src",response).removeClass("d-none");
-        $("input[name=gambar]").val(response);
+        var canvas = document.getElementById("c");
+        var ctx = canvas.getContext("2d");
+        var image = new Image();
+        image.onload = function(){
+            ctx.drawImage(image, 0, 0);
+            $("#img-file").attr("src",canvas.toDataURL("image/png")).removeClass("d-none");
+            $("input[name=gambar]").val(canvas.toDataURL("image/png"));
+        };
+        image.src = response;
     });
     $("#file").val(null);
     $("#modal-croppie").modal("hide");
