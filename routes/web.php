@@ -92,7 +92,7 @@ Route::group(['middleware' => ['guest']], function(){
 	Route::get('/check', 'WebsiteController@check');
 
 	// Forbidden
-	Route::get('/403', function(){
+	Route::get('/forbidden', function(){
 		return view('error/403');
 	});
 

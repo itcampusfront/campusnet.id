@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use App\User;
 use App\Website;
+use App\WebRequest;
 
 class WebsiteController extends Controller
 {
@@ -170,7 +171,16 @@ class WebsiteController extends Controller
 		// Conditions
 		if($website)
 			echo true;
-		else{			
+		else{
+            // Catat request mencurigakan ke database
+            $web_request = new WebRequest;
+            $web_request->api_key = $key;
+            $web_request->username = $username;
+            $web_request->host = $host;
+            $web_request->ip_address = $request->ip();
+            $web_request->request_at = date('Y-m-d H:i:s');
+            $web_request->save();
+            
 			echo false;
 		}
     }
