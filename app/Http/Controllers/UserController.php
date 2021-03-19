@@ -22,7 +22,7 @@ class UserController extends Controller
     {
         if(Auth::user()->role == role_admin()){
             // Data user
-            $user = User::join('role','users.role','=','role.id_role')->orderBy('role','asc')->get();
+            $user = User::join('role','users.role','=','role.id_role')->orderBy('role','asc')->orderBy('register_at','desc')->get();
 
             // View
             return view('admin/user/index', [
