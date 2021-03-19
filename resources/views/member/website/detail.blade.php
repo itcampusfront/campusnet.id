@@ -23,7 +23,11 @@
                     <tr>
                         <td width="20%">Domain</td>
                         <td width="5">:</td>
+                        @if($website->website_status == 1)
                         <td><a href="{{ $website->website_url }}" target="_blank">{{ $website->website_url }}</a></td>
+                        @else
+                        <td><a>{{ $website->website_url }}</a></td>
+                        @endif
                     </tr>
                     <tr>
                         <td>API Key</td>
@@ -41,6 +45,7 @@
                             @endif
                         </td>
                     </tr>
+                    @if($website->website_status == 1)
                     <tr>
                         <td>Login Admin</td>
                         <td>:</td>
@@ -59,6 +64,7 @@
                         <td>:</td>
                         <td>{{ generate_date($website->website_at) }}, pukul {{ date('H:i', strtotime($website->website_at)) }} WIB</td>
                     </tr>
+                    @endif
                 </tbody>
             </table>
         </div>

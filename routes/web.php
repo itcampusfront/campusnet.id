@@ -91,6 +91,11 @@ Route::group(['middleware' => ['guest']], function(){
 	// Check
 	Route::get('/check', 'WebsiteController@check');
 
+	// Forbidden
+	Route::get('/403', function(){
+		return view('error/403');
+	});
+
 	// Login, Daftar dan Recovery Password
 	Route::get('/login', 'Auth\LoginController@showLoginForm');
 	Route::post('/login', 'Auth\LoginController@login');

@@ -28,7 +28,7 @@ class DashboardController extends Controller
         $count_website = Website::join('users','website.id_user','=','users.id_user')->where('users.status','=',1)->count();
 
         // Data website
-        $website = Website::join('users','website.id_user','=','users.id_user')->where('users.status','=',1)->orderBy('website_at','desc')->limit(5)->get();
+        $website = Website::join('users','website.id_user','=','users.id_user')->where('users.status','=',1)->orderBy('website_at','desc')->limit(6)->get();
 
         // View
         return view('admin/dashboard/index', [
@@ -46,7 +46,7 @@ class DashboardController extends Controller
     public function member()
     {
         // Data website
-        $website = Website::join('users','website.id_user','=','users.id_user')->where('website.id_user','=',Auth::user()->id_user)->where('users.status','=',1)->get();
+        $website = Website::join('users','website.id_user','=','users.id_user')->where('website.id_user','=',Auth::user()->id_user)->where('users.status','=',1)->orderBy('website_at','desc')->get();
 
         // View
         return view('member/dashboard/index', [
