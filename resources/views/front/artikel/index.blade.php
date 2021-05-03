@@ -13,46 +13,20 @@
         </nav>
         <div class="content">
             <div class="row">
-                <div class="col-md-6 col-lg-3 mb-3">
-                    <div class="card border-0 shadow-sm rounded-2">
-                        <a href="artikel/detail">
-                        <img src="https://www.w3schools.com/w3css/img_forest.jpg" alt="thumbnail" class="card-img-top rounded-1"></a>
-                        <div class="card-body">
-                            <a href="artikel/detail"><p class="m-0 font-weight-bold">Judul Artikel</p></a>
-                            <p class="m-0 text-muted">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Inventore sunt, quisquam necessitatibus quod animi iusto.</p>
+                @if(count($artikel)>0)
+                    @foreach($artikel as $data)
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="card border-0 shadow-sm rounded-2">
+                                <a href="/artikel/{{ $data->slug_artikel }}">
+                                <img src="{{ asset('assets/images/artikel/'.$data->gambar_artikel) }}" alt="thumbnail" class="card-img-top rounded-1"></a>
+                                <div class="card-body">
+                                    <a href="/artikel/{{ $data->slug_artikel }}"><p class="m-0 font-weight-bold">{{ $data->judul_artikel }}</p></a>
+                                    <p class="m-0 text-muted">{{ substr(strip_tags(html_entity_decode($data->konten_artikel)),0,100) }}...</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-3">
-                    <div class="card border-0 shadow-sm rounded-2">
-                        <a href="artikel/detail">
-                        <img src="https://www.w3schools.com/w3css/img_forest.jpg" alt="thumbnail" class="card-img-top rounded-1"></a>
-                        <div class="card-body">
-                            <a href="artikel/detail"><p class="m-0 font-weight-bold">Judul Artikel</p></a>
-                            <p class="m-0 text-muted">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Inventore sunt, quisquam necessitatibus quod animi iusto.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-3">
-                    <div class="card border-0 shadow-sm rounded-2">
-                        <a href="artikel/detail">
-                        <img src="https://www.w3schools.com/w3css/img_forest.jpg" alt="thumbnail" class="card-img-top rounded-1"></a>
-                        <div class="card-body">
-                            <a href="artikel/detail"><p class="m-0 font-weight-bold">Judul Artikel</p></a>
-                            <p class="m-0 text-muted">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Inventore sunt, quisquam necessitatibus quod animi iusto.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-3">
-                    <div class="card border-0 shadow-sm rounded-2">
-                        <a href="artikel/detail">
-                        <img src="https://www.w3schools.com/w3css/img_forest.jpg" alt="thumbnail" class="card-img-top rounded-1"></a>
-                        <div class="card-body">
-                            <a href="artikel/detail"><p class="m-0 font-weight-bold">Judul Artikel</p></a>
-                            <p class="m-0 text-muted">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Inventore sunt, quisquam necessitatibus quod animi iusto.</p>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>

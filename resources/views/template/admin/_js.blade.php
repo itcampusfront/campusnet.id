@@ -9,3 +9,27 @@
     });
 </script>
 <!-- tooltip end -->
+<script type="text/javascript">
+    // Button Show Modal Image
+    $(document).on("click", ".btn-image", function(e){
+        e.preventDefault();
+        $("#modal-image").modal("show");
+    });
+    
+    // Button Browse File
+    $(document).on("click", ".btn-browse-file", function(e){
+        e.preventDefault();
+        $(this).parents(".form-group").find("input[type=file]").trigger("click");
+    });
+
+    // Button Delete
+    $(document).on("click", ".btn-delete", function(e){
+        e.preventDefault();
+        var id = $(this).data("id");
+        var ask = confirm("Anda yakin ingin menghapus data ini?");
+        if(ask){
+            $("#form-delete input[name=id]").val(id);
+            $("#form-delete").submit();
+        }
+    });
+</script>
