@@ -50,6 +50,9 @@ Route::group(['middleware' => ['admin']], function(){
 	Route::post('/admin/fitur/sort', 'FiturController@sorting');
 	Route::post('/admin/fitur/delete', 'FiturController@delete');
 
+	// Artikel
+	// Route::get('/admin/artikel', 'ArtikelController@index');
+
 	// Testimoni
 	Route::get('/admin/testimoni', 'TestimoniController@index');
 	Route::get('/admin/testimoni/create', 'TestimoniController@create');
@@ -99,6 +102,10 @@ Route::group(['middleware' => ['guest']], function(){
 	Route::get('/forbidden', function(){
 		return view('error/403');
 	});
+
+
+	Route::get('/artikel', 'ArtikelController@index');
+	Route::get('/artikel/{permalink}', 'ArtikelController@detail');
 
 	// Login, Daftar dan Recovery Password
 	Route::get('/login', 'Auth\LoginController@showLoginForm');

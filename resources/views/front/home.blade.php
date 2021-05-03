@@ -23,7 +23,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <img class="img-fluid rounded-3" src="{{asset('assets/images/banner/1.1.webp')}}">
+                                <img class="img-fluid rounded-2" src="{{asset('assets/images/banner/1.1.webp')}}">
                             </div>
                         </div>
                     </div>
@@ -35,12 +35,15 @@
     </section>
     <section class="section-about wrap">
         <div class="container">
-            <div class="rounded-3 bg-white p-4 shadow-sm">
+            <div class="rounded-2 bg-white p-4 shadow-sm">
                 <div class="media d-block d-md-flex">
-                    <h1 style="font-family: 'Dancing Script', cursive;" class="mr-0 mr-md-4">
+                    <!-- <h1 style="font-family: 'Dancing Script', cursive;" class="mr-0 mr-md-4">
                         <span class="color-theme-1">Campus</span><span class="color-theme-2">net</span>
-                    </h1>
-                    <div>
+                    </h1> -->
+                    <div class="bg-theme-1 p-3 mb-3 mb-lg-0 rounded-2 mx-auto mx-lg-0" style="width: fit-content">
+                        <img class="logo-deskripsi" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    </div>
+                    <div class="ml-0 ml-md-3">
                         <h5>Campusnet LMS</h5>
                         <p class="m-0">Campusnet LMS, penyedia solusi pendidikan menanjak dan pelopor yang andal dari Indonesia sejak 2010. Sudah banyak guru dan siswa menggunakan sistem ini! Kunci keberhasilan kami sebagai perusahaan adalah kejelasan visi kami tentang apa yang ingin kami selesaikan atau capai di masa depan dalam jangka panjang. Dan kami siap menjadi mitra Anda dalam memajukan dunia pembelajaran.</p>
                     </div>
@@ -58,8 +61,8 @@
                 @if(count($fitur)>0)
                     @foreach($fitur as $data)
                         <div class="col-md-6 col-lg-4">
-                            <div class="card border-0 rounded-3 shadow-sm mb-4">
-                                <img class="shadow rounded-3 img-fluid" src="{{ asset('assets/images/fitur/'.$data->gambar_fitur) }}">
+                            <div class="card border-0 rounded-2 shadow-sm mb-4">
+                                <img class="shadow rounded-2 img-fluid" src="{{ asset('assets/images/fitur/'.$data->gambar_fitur) }}">
                                 <div class="card-body">
                                     <h5>{{ $data->nama_fitur }}</h5>
                                     <p class="m-0">{{ $data->deskripsi_fitur }}</p>
@@ -81,7 +84,7 @@
                 @if(count($testimoni)>0)
                     @foreach($testimoni as $key=>$data)
                         <div class="item py-3">
-                            <div class="card rounded-3 border-0 shadow-sm">
+                            <div class="card rounded-2 border-0 shadow-sm">
                                 <img style="height: 30px; width:30px; background-color: var(--color-{{ $key % 2 == 0 ? '1' : '2' }})" class="card-img-top rounded-3" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
                                 <div class="card-body">
                                     <h5 class="m-0">{{ $data->klien }}</h5>
@@ -115,45 +118,49 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
             </div>
             <div class="row">
-                <div class="col-lg-3 mb-3">
-                    <div class="card border-0 shadow-sm rounded-3">
-                        <img src="" alt="" class="card-img-top">
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="card border-0 shadow-sm rounded-2">
+                        <a href="artikel/detail">
+                        <img src="https://www.w3schools.com/w3css/img_forest.jpg" alt="thumbnail" class="card-img-top rounded-1"></a>
                         <div class="card-body">
-                            <p class="m-0 font-weight-bold">Judul Artikel</p>
+                            <a href="artikel/detail"><p class="m-0 font-weight-bold">Judul Artikel</p></a>
                             <p class="m-0 text-muted">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Inventore sunt, quisquam necessitatibus quod animi iusto.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-3">
-                    <div class="card border-0 shadow-sm rounded-3">
-                        <img src="" alt="" class="card-img-top">
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="card border-0 shadow-sm rounded-2">
+                        <a href="artikel/detail">
+                        <img src="https://www.w3schools.com/w3css/img_forest.jpg" alt="thumbnail" class="card-img-top rounded-1"></a>
                         <div class="card-body">
-                            <p class="m-0 font-weight-bold">Judul Artikel</p>
+                            <a href="artikel/detail"><p class="m-0 font-weight-bold">Judul Artikel</p></a>
                             <p class="m-0 text-muted">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Inventore sunt, quisquam necessitatibus quod animi iusto.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-3">
-                    <div class="card border-0 shadow-sm rounded-3">
-                        <img src="" alt="" class="card-img-top">
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="card border-0 shadow-sm rounded-2">
+                        <a href="artikel/detail">
+                        <img src="https://www.w3schools.com/w3css/img_forest.jpg" alt="thumbnail" class="card-img-top rounded-1"></a>
                         <div class="card-body">
-                            <p class="m-0 font-weight-bold">Judul Artikel</p>
+                            <a href="artikel/detail"><p class="m-0 font-weight-bold">Judul Artikel</p></a>
                             <p class="m-0 text-muted">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Inventore sunt, quisquam necessitatibus quod animi iusto.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-3">
-                    <div class="card border-0 shadow-sm rounded-3">
-                        <img src="" alt="" class="card-img-top">
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="card border-0 shadow-sm rounded-2">
+                        <a href="artikel/detail">
+                        <img src="https://www.w3schools.com/w3css/img_forest.jpg" alt="thumbnail" class="card-img-top rounded-1"></a>
                         <div class="card-body">
-                            <p class="m-0 font-weight-bold">Judul Artikel</p>
+                            <a href="artikel/detail"><p class="m-0 font-weight-bold">Judul Artikel</p></a>
                             <p class="m-0 text-muted">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Inventore sunt, quisquam necessitatibus quod animi iusto.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center">
-                <a class="btn btn-theme-1 rounded-3" href="#">Lihat Semua</a>
+                <a class="btn btn-theme-1 rounded-3" href="artikel">Lihat Semua</a>
             </div>
         </div>
     </section>

@@ -28,7 +28,7 @@
 						Lainya
 					</li>
 					<li class="list-group-item bg-transparent border-0 px-0 pb-1">
-						<a class="text-dark text-decoration-none" href="#">Artikel</a>
+						<a class="text-dark text-decoration-none" href="artikel">Artikel</a>
 					</li>
 				</ul>
 			</div>
