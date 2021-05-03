@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use App\Artikel;
 use App\Fitur;
 use App\Testimoni;
 use App\User;
@@ -67,10 +68,14 @@ class DashboardController extends Controller
         // Data testimoni
         $testimoni = Testimoni::orderBy('order_testimoni','asc')->get();
 
+        // Data artikel
+        $artikel = Artikel::orderBy('artikel_at','desc')->get();
+
         // View
         return view('front/home', [
             'fitur' => $fitur,
             'testimoni' => $testimoni,
+            'artikel' => $artikel,
         ]);
     }
 }

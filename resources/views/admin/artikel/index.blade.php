@@ -55,7 +55,7 @@
                                 <div class="btn-group">
                                     <a href="/admin/artikel/detail/{{ $data->id_artikel }}" class="btn btn-sm btn-theme-1" data-toggle="tooltip" title="Detail"><i class="fa fa-eye"></i></a>
                                     <a href="/admin/artikel/edit/{{ $data->id_artikel }}" class="btn btn-sm btn-theme-1" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></a>
-                                    <a href="#" class="btn btn-sm btn-theme-1 btn-delete" data-toggle="tooltip" title="Hapus"><i class="fa fa-trash"></i></a>
+                                    <a href="#" class="btn btn-sm btn-theme-1 btn-delete" data-id="{{ $data->id_artikel }}" data-toggle="tooltip" title="Hapus"><i class="fa fa-trash"></i></a>
                                 </div>
                             </td>
                         </tr>
@@ -64,6 +64,10 @@
                     @endif
                 </tbody>
             </table>
+            <form id="form-delete" class="d-none" method="post" action="{{ route('admin.artikel.delete') }}">
+                {{ csrf_field() }}
+                <input type="hidden" name="id">
+            </form>
         </div>
         </div>
     </div>

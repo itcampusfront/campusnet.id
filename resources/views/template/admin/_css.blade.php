@@ -1,48 +1,28 @@
 <style type="text/css">
-    /* Change Primary */
-    ::selection {background-color: {{ get_warna_primer() }}!important;}
-    ::-moz-selection {background-color: {{ get_warna_primer() }}!important;}
-    a {color: {{ get_warna_primer() }};}
-    a:hover {color: {{ get_warna_sekunder() }};}
-    .page-link {color: {{ get_warna_primer() }};}
-    .page-link:hover {color: {{ get_warna_sekunder() }};}
-    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {background-color: {{ get_warna_primer() }}!important;}
-    .material-half-bg .cover {background-color: {{ get_warna_primer() }}!important;}
-    .app-sidebar {background-color: {{ get_warna_primer() }}!important;}
-    .app-sidebar__toggle:focus, .app-sidebar__toggle:hover {background-color: {{ get_warna_sekunder() }}!important;}
-    .text-primary {color: {{ get_warna_primer() }}!important;}
-    .btn-primary {background-color: {{ get_warna_primer() }}!important; border-color: {{ get_warna_primer() }}!important;}
-    .btn-primary:hover {background-color: {{ get_warna_sekunder() }}!important; border-color: {{ get_warna_sekunder() }}!important;}
-    .page-item.active .page-link {background-color: {{ get_warna_primer() }}!important; border-color: {{ get_warna_primer() }}!important;}
-    .form-control:focus {border-color: {{ get_warna_primer() }}!important;}
-    .animated-checkbox input[type="checkbox"]:checked + .label-text:before {color: {{ get_warna_primer() }}!important;}
-    .widget-small.primary.coloured-icon .icon {background-color: {{ get_warna_primer() }}!important;}
-    .dropdown-item.active, .dropdown-item:active {background-color: {{ get_warna_primer() }}!important;}
-	.treeview-menu {background-color: {{ get_warna_sekunder() }}!important;}
-    .progress-bar {background-color: {{ get_warna_primer() }}!important;}
-    .btn-outline-primary {color: {{ get_warna_primer() }}; background-color: transparent; background-image: none; border-color: {{ get_warna_primer() }};}
-    .btn-outline-primary:hover {color: #FFF; background-color: {{ get_warna_primer() }}; border-color: {{ get_warna_primer() }};}
-    .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active, .show > .btn-outline-primary.dropdown-toggle {color: #FFF; background-color: {{ get_warna_primer() }}; border-color: {{ get_warna_primer() }};}
+    /* Modal Image */
+    #modal-image .modal-body {height: 80vh; overflow-y: auto;}
+    .dropzone-wrapper {height: 150px; border: 2px dashed var(--color-1);}
+    .dropzone-wrapper:hover {background-color: #e5e5e5; transition: .3s ease-in;}
+    .dropzone-desc {text-align: center; font-weight: bold;}
+    .dropzone, .dropzone:focus {position: absolute; width: 100%; height: 150px; outline: none!important; cursor: pointer; opacity: 0;}
+    .btn-choose-image {cursor: pointer; opacity: .7;}
+    .btn-choose-image:hover {opacity: 1; transition: .3s ease-in;}
 
-    .login-content .login-box {min-height: 430px;}
-    .app-menu__item.active, .app-menu__item:hover, .app-menu__item:focus {border-left-color: #fdd100!important;}
-    .treeview.is-expanded [data-toggle='treeview'] {border-left-color: #fdd100!important;}
-    .treeview-item .icon {margin-right: 10px;}
-    .btn .icon, .btn .fa {margin-right: 0; width: 14px;}
-    .app-header {background-color: #555!important;}
-    .app-sidebar__user-avatar {border-radius: 0!important;}
-    .app-menu {border-top: 1px solid #bbb;}
-    .app-menu__submenu {margin-top: 2rem; padding: 8px 15px;}
-    .app-menu__submenu .app-menu__label {color: #fff; font-size: 1rem; font-weight: bold; text-transform: uppercase;}
-    .tab-content {border-top: 1px solid {{ get_warna_primer() }};}
-    .separator {width: 100%; margin: 1rem; border-top: 1px solid #ddd;}
-    .hidden-date {display: none;}
+    /* Modal Croppie */
+    #modal-croppie .modal-dialog {max-width: 100%; margin-left: 1rem; margin-right: 1rem;}
+    #modal-croppie .modal-body .table-responsive {max-height: calc(100vh - 250px); overflow-y: auto;}
 
-    @media(max-width: 767px){
-	    .app-header__logo {display: none;}
-	}
+    /* Quill Editor */
+    #editor {height: 300px;}
+    .ql-button-html:after {content: "<>";}
+    .ql-editor {white-space: normal!important;}
+    .ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4, .ql-editor h5, .ql-editor h6, .ql-editor p {margin-bottom: 1rem!important;}
+    .ql-snow .ql-toolbar button, .ql-snow.ql-toolbar button.ql-button-html {width: 30px;}
 
-    @media(min-width: 768px){
-	    .app-header__logo {background-color: {{ get_warna_primer() }}80!important; font-family: 'Lato'; text-transform: uppercase;}
-	}
+    /* Bootstrap Tagsinput */
+    .bootstrap-tagsinput {width: 100%!important;}
+    .bootstrap-tagsinput .tag {padding: 1px 2px; border-radius: 4px; background-color: var(--color-1)!important;}
+    .tt-menu {background-color: #fff!important; width: 100%; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15)!important; -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15)!important}
+    .tt-suggestion {padding: .5rem; cursor: pointer;}
+    .tt-suggestion:hover {background-color: #e5e5e5;}
 </style>
