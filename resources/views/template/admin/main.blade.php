@@ -5,18 +5,20 @@
     @yield('css-extra')
 </head>
 <body style="background-color: #f8f9fa" id="home">
-    @include('template/admin/_header')
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 py-4 d-none d-lg-block">
+    <div class="" id="body-row">
+        <div class="d-flex">
+            <div class="left">
                 @include('template/admin/_sidebar')
             </div>
-            <div class="col-lg-9 py-4">
-                @yield('content')
+            <div class="right">
+                @include('template/admin/_header')
+                <div class="right-container">
+                    @yield('content')
+                </div>
+                @include('template/admin/_footer')
             </div>
         </div>
     </div>
-    @include('template/admin/_footer')
     @include('template/admin/_js')
     @yield('js-extra')
 </body>

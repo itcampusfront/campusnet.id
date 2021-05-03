@@ -55,7 +55,7 @@
         <div class="container mb-5">
             <div class="heading text-center text-lg-left mb-4">
                 <h1 class="color-theme-1">Fitur kami</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                <p>Fitur unggulan yang kami tawarkan</p>
             </div>
             <div class="row justify-content-center">
                 @if(count($fitur)>0)
@@ -78,7 +78,7 @@
         <div class="container mb-5">
             <div class="heading text-center text-lg-left mb-4">
                 <h1 class="color-theme-1">Apa Kata Klien Kami</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                <p>Apa kata mereka tentang Campusnet?</p>
             </div>
             <div id="client-carousel" class="owl-carousel owl-theme">
                 @if(count($testimoni)>0)
@@ -97,7 +97,7 @@
             </div>
         </div>
     </section>
-    <section class="section-client wrap" id="demo">
+    <section class="section-client wrap bg-white" id="demo">
         <div class="container pb-5">
             <div class="row">
                 <div class="col-md-6 mb-3 mb-md-0 text-center text-md-left">
@@ -115,7 +115,7 @@
         <div class="container mb-3">
             <div class="heading text-center text-lg-left mb-4">
                 <h1 class="color-theme-1">Artikel</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                <p>Rekomendasi artikel</p>
             </div>
             <div class="row">
                 <div class="col-md-6 col-lg-3 mb-3">
