@@ -20,6 +20,11 @@
             <i class="fas fa-globe-asia position-absolute py-1"></i>
             <p class="mb-0" style="margin-left: 2em">Website</p>
         </a>
+
+        <a class="list-group-item py-3 border-0 {{ strpos(Request::url(), '/admin/artikel') ? 'active' : '' }}" href="/admin/artikel">
+            <i class="fas fa-newspaper position-absolute py-1"></i>
+            <p class="mb-0" style="margin-left: 2em">Artikel</p>
+        </a>
         <a class="list-group-item py-3 border-0 {{ strpos(Request::url(), '/admin/fitur') ? 'active' : '' }}" href="/admin/fitur">
             <i class="fas fa-star position-absolute py-1"></i>
             <p class="mb-0" style="margin-left: 2em">Fitur</p>

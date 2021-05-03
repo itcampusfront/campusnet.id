@@ -108,4 +108,53 @@
             </div>
         </div>
     </section>
+    <section class="section-artikel wrap" id="artikel">
+        <div class="container mb-3">
+            <div class="heading text-center text-lg-left mb-4">
+                <h1 class="color-theme-1">Artikel</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 mb-3">
+                    <div class="card border-0 shadow-sm rounded-3">
+                        <img src="" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <p class="m-0 font-weight-bold">Judul Artikel</p>
+                            <p class="m-0 text-muted">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Inventore sunt, quisquam necessitatibus quod animi iusto.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <div class="card border-0 shadow-sm rounded-3">
+                        <img src="" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <p class="m-0 font-weight-bold">Judul Artikel</p>
+                            <p class="m-0 text-muted">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Inventore sunt, quisquam necessitatibus quod animi iusto.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <div class="card border-0 shadow-sm rounded-3">
+                        <img src="" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <p class="m-0 font-weight-bold">Judul Artikel</p>
+                            <p class="m-0 text-muted">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Inventore sunt, quisquam necessitatibus quod animi iusto.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <div class="card border-0 shadow-sm rounded-3">
+                        <img src="" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <p class="m-0 font-weight-bold">Judul Artikel</p>
+                            <p class="m-0 text-muted">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Inventore sunt, quisquam necessitatibus quod animi iusto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a class="btn btn-theme-1 rounded-3" href="#">Lihat Semua</a>
+            </div>
+        </div>
+    </section>
 @endsection

@@ -21,6 +21,9 @@
                 <li class="nav-item">
                     <a class="nav-link font-weight-bold" href="#demo">Demo</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#artikel">Artikel</a>
+                </li>
             </ul>
             @if(Auth::guest())
             <div class="nav-item">
