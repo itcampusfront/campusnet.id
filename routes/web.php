@@ -37,6 +37,15 @@ Route::group(['middleware' => ['admin']], function(){
 	Route::post('/admin/website/activate', 'WebsiteController@activate');
 	Route::get('/admin/website/detail/{id}', 'WebsiteController@detail');
 
+	// Artikel
+	Route::get('/admin/artikel', 'ArtikelController@index')->name('admin.artikel.index');
+	Route::get('/admin/artikel/create', 'ArtikelController@create')->name('admin.artikel.create');
+	Route::post('/admin/artikel/store', 'ArtikelController@store')->name('admin.artikel.store');
+	Route::get('/admin/artikel/edit/{id}', 'ArtikelController@edit')->name('admin.artikel.edit');
+	Route::post('/admin/artikel/update', 'ArtikelController@update')->name('admin.artikel.update');
+	Route::post('/admin/artikel/delete', 'ArtikelController@delete')->name('admin.artikel.delete');
+	Route::get('/admin/artikel/images', 'ArtikelController@showImages')->name('admin.artikel.images');
+
 	// Fitur
 	Route::get('/admin/fitur', 'FiturController@index');
 	Route::get('/admin/fitur/create', 'FiturController@create');
@@ -45,9 +54,6 @@ Route::group(['middleware' => ['admin']], function(){
 	Route::post('/admin/fitur/update', 'FiturController@update');
 	Route::post('/admin/fitur/sort', 'FiturController@sorting');
 	Route::post('/admin/fitur/delete', 'FiturController@delete');
-
-	// Artikel
-	// Route::get('/admin/artikel', 'ArtikelController@index');
 
 	// Testimoni
 	Route::get('/admin/testimoni', 'TestimoniController@index');

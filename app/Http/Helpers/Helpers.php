@@ -1,5 +1,7 @@
 <?php
 
+use App\Tag;
+
 /*--------------------------------------------------------------------------------------------*/
 /* ROLES */
 /*--------------------------------------------------------------------------------------------*/
@@ -461,9 +463,9 @@ if(!function_exists('time_elapsed_string')){
 // Menghitung jumlah data duplikat
 if(!function_exists('count_existing_data')){
     function count_existing_data($table, $field, $keyword, $primaryKey, $id = null){
-        if($id == null) $data = DB::table($table)->where($field,'=',$keyword)->get();
-        else $data = DB::table($table)->where($field,'=',$keyword)->where($primaryKey,'!=',$id)->get();
-        return count($data);
+        if($id == null) $data = DB::table($table)->where($field,'=',$keyword)->count();
+        else $data = DB::table($table)->where($field,'=',$keyword)->where($primaryKey,'!=',$id)->count();
+        return $data;
     }
 }
 
@@ -545,6 +547,93 @@ if(!function_exists('shuffle_string')){
         $available_string = '1234567890QWERTYUIOPASDFGHJKLZXCVBNM';
         $string = substr(str_shuffle($available_string), 0, $length);
         return $string;
+    }
+}
+
+// Slugify
+if(!function_exists('slugify')){
+    function slugify($text, $table, $field, $primaryKey, $id = null){
+        $permalink = generate_permalink($text);
+        $i = 1;
+        while(count_existing_data($table, $field, $permalink, $primaryKey, $id) > 0){
+            $permalink = rename_permalink(generate_permalink($text), $i);
+            $i++;
+        }
+        return $permalink;
+    }
+}
+
+// Generate image name
+if(!function_exists('generate_image_name')){
+    function generate_image_name($path, $image_base64, $image_url){
+        if($image_base64 != '')
+            $image_name = upload_file($image_base64, $path);
+        elseif($image_url != '')
+            $image_name = str_replace(url()->to($path).'/', '', $image_url);
+        else
+            $image_name = '';
+
+        return $image_name;
+    }
+}
+
+// Generate tag by name
+if(!function_exists('generate_tag_by_name')){
+    function generate_tag_by_name($tags){
+        // Define empty array
+        $array = [];
+
+        // Explode and filter array
+        $array_tag = explode(",", $tags);
+        $array_tag = array_filter($array_tag);
+
+        // Convert tag to ID
+        if(count($array_tag)>0){
+            foreach($array_tag as $key=>$tag){
+                // Get data tag
+                $data = Tag::where('tag','=',$tag)->first();
+                // If not exist, add new tag
+                if(!$data){
+                    $new = new Tag;
+                    $new->tag = $tag;
+                    $new->slug = slugify($tag, 'tag', 'slug', 'id_tag', null);
+                    $new->save();
+
+                    // Push latest data
+                    $newest = Tag::latest('id_tag')->first();
+                    array_push($array, $newest->id_tag);
+                }
+                else{
+                    array_push($array, $data->id_tag);
+                }
+            }
+        }
+
+        // Return
+        return implode(",", $array);
+    }
+}
+
+// Generate tag by id
+if(!function_exists('generate_tag_by_id')){
+    function generate_tag_by_id($tags){
+        if($tags != ''){
+            // Explode and filter array
+            $array_tag = explode(",", $tags);
+            $array_tag = array_filter($array_tag);
+
+            if(count($array_tag)>0){
+                foreach($array_tag as $key=>$tag){
+                    // Custom data
+                    $data = Tag::find($tag);
+                    $array_tag[$key] = $data ? $data->tag : '';
+                }
+                return implode(",", $array_tag);
+            }
+        }
+        else{
+            return '';
+        }
     }
 }
 

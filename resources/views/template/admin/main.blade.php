@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     @include('template/admin/_head')
+    @include('template/admin/_css')
     @yield('css-extra')
 </head>
 <body style="background-color: #f8f9fa" id="home">
