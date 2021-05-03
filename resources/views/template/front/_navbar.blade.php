@@ -33,7 +33,8 @@
             <div class="nav-item dropdown dropdown-user order-lg-0 order-1">
                 <a class="nav-link dropdown-toggle px-0 px-lg-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="d-flex align-items-center">
-                        <img src="{{ Auth::user()->foto != '' ? asset('assets/images/user/'.Auth::user()->foto) : asset('assets/images/default/user.jpg') }}" height="40" class="rounded-circle d-none d-lg-block">
+                        <!-- <img src="{{ Auth::user()->foto != '' ? asset('assets/images/user/'.Auth::user()->foto) : asset('assets/images/default/user.jpg') }}" height="40" class="rounded-circle d-none d-lg-block"> -->
+                        <div class="bg-light rounded-1 px-3 py-2"><i class="fas fa-user"></i></div>
                     </div>
                     <div class="media d-flex d-lg-none shadow-sm rounded-2 bg-theme-1 py-2 px-3">
                         <img src="{{ Auth::user()->foto != '' ? asset('assets/images/user/'.Auth::user()->foto) : asset('assets/images/default/user.jpg') }}" height="40" class="rounded-circle mr-3 mt-1">

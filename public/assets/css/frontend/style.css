@@ -5,6 +5,7 @@
 	--bg-footer-1: #F2F2F2;
 	--bg-footer-2: #E0E0E0;
 	--transition: .25s ease;
+  --border: 1px solid rgba(0,0,0,.1);
 }
 /**{border: 1px solid red}*/
 html {scroll-behavior: smooth;}
@@ -65,20 +66,17 @@ body{color: var(--color-theme-2)!important}
     75% {transform: scale(1);}
     100% {transform: scale(1);}
 }
+.side-artikel{border-right: var(--border)}
+.side-artikel .tag-list{border-top: var(--border)}
 .sticky-sidebar{position: sticky; top: 5em; height: fit-content}
-/*MQ*/
-/*@media (max-width: 768px) {
-  .dropdown-profile{position: static; width: 100%}
-  .w-md-0{width: unset!important}
-  .pp-dashboard{width: 65px; height: 65px}
-  .vh-md-0{height: fit-content!important}
-  .register.wrapper{ width: unset!important; position: unset!important; top: unset!important; left: unset!important; transform: unset!important;}
-}
-*/@media (max-width: 991.98px){
+.logo-deskripsi{width: 100px; height: 100px; background-image: url('../../../assets/images/logo/campusnet.webp'); background-size: cover; filter: brightness(0) invert(1);}
+@media (max-width: 991.98px){
   .sticky-sidebar{position: unset; top: unset; height: unset;}
   .dropdown-profile{position: static; width: 100%}
   .w-md-0{width: unset!important}
   .pp-dashboard{width: 65px; height: 65px}
   .vh-md-0{height: fit-content!important}
   .register.wrapper{ width: unset!important; position: unset!important; top: unset!important; left: unset!important; transform: unset!important;}
+  .side-artikel{border-right: 0; border-top: var(--border); padding-top: 1em}
+  .side-artikel .tag-list{border-bottom: var(--border); border-top: var(--border)}
 }
