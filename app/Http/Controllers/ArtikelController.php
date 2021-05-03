@@ -6,7 +6,8 @@ use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use App\Fitur;
+use App\Artikel;
+use App\KategoriArtikel;
 use App\User;
 
 class ArtikelController extends Controller
@@ -52,5 +53,4 @@ class ArtikelController extends Controller
             return view('error/403');
         }
     }
-
 }
