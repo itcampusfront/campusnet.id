@@ -37,6 +37,10 @@ Route::group(['middleware' => ['admin']], function(){
 	Route::post('/admin/website/activate', 'WebsiteController@activate');
 	Route::get('/admin/website/detail/{id}', 'WebsiteController@detail');
 
+	// Artikel
+	Route::get('/admin/artikel', 'ArtikelController@index');
+	Route::get('/admin/artikel/create', 'ArtikelController@create');
+
 	// Fitur
 	Route::get('/admin/fitur', 'FiturController@index');
 	Route::get('/admin/fitur/create', 'FiturController@create');
