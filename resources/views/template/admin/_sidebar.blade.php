@@ -25,25 +25,25 @@
             <p class="mb-0" style="margin-left: 2em">Website</p>
         </a>
 
-        <a class="list-group-item py-3 border-0 {{ strpos(Request::url(), '/admin/artikel') ? 'active' : '' }} d-flex align-items-center" href="#submenu1" data-toggle="collapse" aria-expanded="false">
+        <a class="list-group-item py-3 border-0 {{ is_int(strpos(Request::url(), route('admin.artikel.index'))) ? 'active' : '' }} d-flex align-items-center" href="#submenu1" data-toggle="collapse" aria-expanded="{{ is_int(strpos(Request::url(), route('admin.artikel.index'))) ? 'true' : 'false' }}">
             <i class="icon-collapse fas fa-newspaper position-absolute py-1"></i>
             <p class="mb-0 menu-collapsed" style="margin-left: 2em">Artikel</p>
             <span class="submenu-icon ml-auto"></span>
         </a>
-        <div id='submenu1' class="collapse sidebar-submenu lis bg-light rounded-2">
-            <a href="/admin/artikel" class="list-group-item list-group-item-action {{ strpos(Request::url(), '/admin/artikel') ? 'active' : '' }}">
+        <div id='submenu1' class="collapse sidebar-submenu lis bg-light rounded-2 {{ is_int(strpos(Request::url(), route('admin.artikel.index'))) ? 'show' : '' }}">
+            <a href="{{ route('admin.artikel.index') }}" class="list-group-item list-group-item-action {{ is_int(strpos(Request::url(), route('admin.artikel.index'))) && !is_int(strpos(Request::url(), route('admin.artikel.kategori.index'))) && !is_int(strpos(Request::url(), route('admin.artikel.tag.index'))) && !is_int(strpos(Request::url(), route('admin.artikel.kontributor.index'))) ? 'active' : '' }}">
                 <i class="fas fa-copy mr-2"></i>
                 <span class="menu-collapsed">Data Artikel</span>
             </a>
-            <a href="#" class="list-group-item list-group-item-action">
+            <a href="{{ route('admin.artikel.kategori.index') }}" class="list-group-item list-group-item-action {{ is_int(strpos(Request::url(), route('admin.artikel.kategori.index'))) ? 'active' : '' }}">
                 <i class="fas fa-th-large mr-2"></i>
                 <span class="menu-collapsed">Kategori</span>
             </a>
-            <a href="#" class="list-group-item list-group-item-action">
+            <a href="{{ route('admin.artikel.tag.index') }}" class="list-group-item list-group-item-action {{ is_int(strpos(Request::url(), route('admin.artikel.tag.index'))) ? 'active' : '' }}">
                 <i class="fas fa-tags mr-2"></i>
                 <span class="menu-collapsed">Tag</span>
             </a>
-            <a href="#" class="list-group-item list-group-item-action">
+            <a href="{{ route('admin.artikel.kontributor.index') }}" class="list-group-item list-group-item-action {{ is_int(strpos(Request::url(), route('admin.artikel.kontributor.index'))) ? 'active' : '' }}">
                 <i class="fas fa-users mr-2"></i>
                 <span class="menu-collapsed">Kontributor</span>
             </a>

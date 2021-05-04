@@ -69,7 +69,7 @@
                 <div class="card p-0 bg-transparent border-0">
                   <img src="{{ asset('assets/images/artikel/'.$data->gambar_artikel) }}" class="card-img-top rounded"> 
                   <div class="card-body">
-                    <a href="#">  
+                    <a href="/artikel/{{ $data->slug_artikel }}">  
                       <p>{{ $data->judul_artikel }}</p>
                     </a>
                   </div>  
