@@ -1,14 +1,13 @@
 $(document).ready(function(){
 	// Hide submenus
-	$('#body-row .collapse').collapse('hide'); 
-
-	// Collapse/Expand icon
-	$('#collapse-icon').addClass('fa-angle-double-left'); 
+	$('#body-row .collapse').collapse('hide');  
 
 	// Collapse click
 	$('[data-toggle=sidebar-colapse]').click(function() {
 	    SidebarCollapse();
 	});
+
+	$('.a .sidebar-submenu').addClass('show');
 
 	function SidebarCollapse () {
 	    $('.menu-collapsed').toggleClass('d-none');
@@ -18,7 +17,9 @@ $(document).ready(function(){
 	    $('#body-row').toggleClass('collapsed');
 	    // Collapse/Expand icon
 	    $('#collapse-icon').toggleClass('fa-angle-double-left fa-angle-double-right');
+
 	}
+
 });
 
 // go top
