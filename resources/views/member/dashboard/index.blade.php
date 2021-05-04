@@ -9,23 +9,19 @@
         @include('template/member/_order-now')
         <div class="detail mb-3">
             <div class="row">
-                <div class="col-12 col-sm-6 mb-3 mb-lg-0">
-                    <div class="card border-0 shadow-sm rounded-3 text-center">
-                        <div class="card-header rounded-3 border-0 shadow" style="background-color: #0d3b66; color: #fff">
-                            <p class="m-0">Website Kamu</p>
-                        </div>
-                        <div class="card-body">
-                            <h1>{{ count($website) }}</h1>
+                <div class="col-6 mb-3 mb-lg-0">
+                    <div class="card border-0 shadow-sm rounded-3" style="background-color: #0d3b66; color: var(--white)">
+                        <div class="card-body d-flex align-items-center">
+                            <h1 class="mr-3">{{ count($website) }}</h1>
+                            <p class="m-0"><span class="font-weight-bold">Website</span><br><span class="small">Kamu</span></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 mb-3 mb-lg-0">
-                    <div class="card border-0 shadow-sm rounded-3 text-center">
-                        <div class="card-header rounded-3 border-0 shadow" style="background-color: #735d78; color: #fff">
-                            <p class="m-0">Transaksi</p>
-                        </div>
-                        <div class="card-body">
-                            <h1>{{ count($website) }}</h1>
+                <div class="col-6 mb-3 mb-lg-0">
+                    <div class="card border-0 shadow-sm rounded-3" style="background-color: #f95738; color: var(--white)">
+                        <div class="card-body d-flex align-items-center">
+                            <h1 class="mr-3">{{ count($website) }}</h1>
+                            <p class="m-0"><span class="font-weight-bold">Transaksi</span><br><span class="small">Kamu</span></p>
                         </div>
                     </div>
                 </div>

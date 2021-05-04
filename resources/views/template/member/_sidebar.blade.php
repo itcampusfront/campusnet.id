@@ -1,4 +1,4 @@
-<div class="sidebar-expanded vh-100 position-fixed bg-white px-2" id="sidebar-container">
+<div class="sidebar-expanded vh-100 position-fixed bg-white" id="sidebar-container">
     <div class="profile-info d-flex align-items-center d-lg-block text-left text-lg-center py-3 px-lg-0">
         <img class="pp-dashboard mb-0 mb-lg-3 mr-3 mr-lg-0" src="{{asset('assets/images/user/avatar.webp')}}">
         <div class="mr-auto">

@@ -7,7 +7,7 @@
 <div class="content">
   <div class="detail mb-3">
       <div class="row">
-          <div class="col-12 col-md-4 mb-3 mb-lg-0">
+          <div class="col-6 col-md-4 mb-3 mb-lg-0">
               <div class="card border-0 shadow-sm rounded-3" style="background-color: #f95738; color: var(--white)">
                 <div class="card-body d-flex align-items-center">
                   <h1 class="mr-3">{{ $count_user }}</h1>
@@ -15,7 +15,7 @@
                 </div>
               </div>
           </div>
-          <div class="col-12 col-md-4 mb-3 mb-lg-0">
+          <div class="col-6 col-md-4 mb-3 mb-lg-0">
               <div class="card border-0 shadow-sm rounded-3" style="background-color: #0d3b66; color: var(--white)">
                 <div class="card-body d-flex align-items-center">
                   <h1 class="mr-3">{{ $count_website }}</h1>
@@ -23,7 +23,7 @@
                 </div>
               </div>
           </div>
-          <div class="col-12 col-md-4 mb-3 mb-lg-0">
+          <div class="col-6 col-md-4 mb-3 mb-lg-0">
               <div class="card border-0 shadow-sm rounded-3" style="background-color: #735d78; color: var(--white)">
                 <div class="card-body d-flex align-items-center">
                   <h1 class="mr-3">{{ $count_website }}</h1>
