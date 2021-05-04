@@ -1,4 +1,4 @@
-<div class="sidebar-expanded vh-100 position-fixed bg-white px-2" id="sidebar-container">
+<div id="sidebar-container" class="sidebar-expanded vh-100 position-fixed bg-white">
     <div class="profile-info d-flex align-items-center d-lg-block text-left text-lg-center py-3 px-lg-0">
         <img class="pp-dashboard mb-0 mb-lg-3 mr-3 mr-lg-0" src="{{asset('assets/images/user/avatar.webp')}}">
         <div class="mr-auto">
@@ -32,19 +32,19 @@
         </a>
         <div id='submenu1' class="collapse sidebar-submenu lis bg-light rounded-2">
             <a href="/admin/artikel" class="list-group-item list-group-item-action {{ strpos(Request::url(), '/admin/artikel') ? 'active' : '' }}">
-                <i class="fas fa-dot-circle mr-2"></i>
+                <i class="fas fa-copy mr-2"></i>
                 <span class="menu-collapsed">Data Artikel</span>
             </a>
             <a href="#" class="list-group-item list-group-item-action">
-                <i class="fas fa-dot-circle mr-2"></i>
+                <i class="fas fa-th-large mr-2"></i>
                 <span class="menu-collapsed">Kategori</span>
             </a>
             <a href="#" class="list-group-item list-group-item-action">
-                <i class="fas fa-dot-circle mr-2"></i>
+                <i class="fas fa-tags mr-2"></i>
                 <span class="menu-collapsed">Tag</span>
             </a>
             <a href="#" class="list-group-item list-group-item-action">
-                <i class="fas fa-dot-circle mr-2"></i>
+                <i class="fas fa-users mr-2"></i>
                 <span class="menu-collapsed">Kontributor</span>
             </a>
         </div>
