@@ -43,7 +43,7 @@
                         <tr>
                             <td align="center">{{ $i }}</td>
                             <td>
-                                <a href="/admin/artikel/detail/{{ $data->id_artikel }}">{{ $data->judul_artikel }}</a>
+                                <a href="/artikel/{{ $data->slug_artikel }}" target="_blank">{{ $data->judul_artikel }}</a>
                             </td>
                             <td>
                                 <span class="d-none">{{ $data->artikel_at }}</span>
@@ -53,7 +53,7 @@
                             </td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="/admin/artikel/detail/{{ $data->id_artikel }}" class="btn btn-sm btn-theme-1" data-toggle="tooltip" title="Detail"><i class="fa fa-eye"></i></a>
+                                    <a href="/artikel/{{ $data->slug_artikel }}" target="_blank" class="btn btn-sm btn-theme-1" data-toggle="tooltip" title="Detail"><i class="fa fa-eye"></i></a>
                                     <a href="/admin/artikel/edit/{{ $data->id_artikel }}" class="btn btn-sm btn-theme-1" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></a>
                                     <a href="#" class="btn btn-sm btn-theme-1 btn-delete" data-id="{{ $data->id_artikel }}" data-toggle="tooltip" title="Hapus"><i class="fa fa-trash"></i></a>
                                 </div>
