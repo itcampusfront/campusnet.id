@@ -8,6 +8,7 @@ $(document).ready(function(){
 	});
 
 	$('.a .sidebar-submenu').addClass('show');
+	$('.a .list-group-item').attr('aria-expanded', 'true');
 
 	function SidebarCollapse () {
 	    $('.menu-collapsed').toggleClass('d-none');
