@@ -25,10 +25,30 @@
             <p class="mb-0" style="margin-left: 2em">Website</p>
         </a>
 
-        <a class="list-group-item py-3 border-0 {{ strpos(Request::url(), '/admin/artikel') ? 'active' : '' }}" href="/admin/artikel">
+        <a class="list-group-item py-3 border-0 {{ strpos(Request::url(), '/admin/artikel') ? 'active' : '' }} d-flex align-items-center" href="#submenu1" data-toggle="collapse" aria-expanded="false">
             <i class="icon-collapse fas fa-newspaper position-absolute py-1"></i>
-            <p class="mb-0" style="margin-left: 2em">Artikel</p>
+            <p class="mb-0 menu-collapsed" style="margin-left: 2em">Artikel</p>
+            <span class="submenu-icon ml-auto"></span>
         </a>
+        <div id='submenu1' class="collapse sidebar-submenu lis bg-light rounded-2">
+            <a href="/admin/artikel" class="list-group-item list-group-item-action {{ strpos(Request::url(), '/admin/artikel') ? 'active' : '' }}">
+                <i class="fas fa-dot-circle mr-2"></i>
+                <span class="menu-collapsed">Data Artikel</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <i class="fas fa-dot-circle mr-2"></i>
+                <span class="menu-collapsed">Kategori</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <i class="fas fa-dot-circle mr-2"></i>
+                <span class="menu-collapsed">Tag</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <i class="fas fa-dot-circle mr-2"></i>
+                <span class="menu-collapsed">Kontributor</span>
+            </a>
+        </div>
+
         <a class="list-group-item py-3 border-0 {{ strpos(Request::url(), '/admin/fitur') ? 'active' : '' }}" href="/admin/fitur">
             <i class="icon-collapse fas fa-star position-absolute py-1"></i>
             <p class="mb-0" style="margin-left: 2em">Fitur</p>
