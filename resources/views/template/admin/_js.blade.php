@@ -33,4 +33,10 @@
             $("#form-delete").submit();
         }
     });
+
+    // Button Forbidden
+    $(document).on("click", ".btn-forbidden", function(e){
+        e.preventDefault();
+        alert("Anda tidak mempunyai akses untuk membuka halaman ini!");
+    });
 </script>

@@ -20,7 +20,7 @@ Route::group(['middleware' => ['admin']], function(){
 	Route::post('/admin/logout', 'Auth\LoginController@logout');
 
 	// Dashboard
-	Route::get('/admin', 'DashboardController@admin');
+	Route::get('/admin', 'DashboardController@admin')->name('admin.dashboard');
 
 	// User
 	Route::get('/admin/user', 'UserController@index');
@@ -45,6 +45,30 @@ Route::group(['middleware' => ['admin']], function(){
 	Route::post('/admin/artikel/update', 'ArtikelController@update')->name('admin.artikel.update');
 	Route::post('/admin/artikel/delete', 'ArtikelController@delete')->name('admin.artikel.delete');
 	Route::get('/admin/artikel/images', 'ArtikelController@showImages')->name('admin.artikel.images');
+
+	// Kategori Artikel
+	Route::get('/admin/artikel/kategori', 'KategoriArtikelController@index')->name('admin.artikel.kategori.index');
+	Route::get('/admin/artikel/kategori/create', 'KategoriArtikelController@create')->name('admin.artikel.kategori.create');
+	Route::post('/admin/artikel/kategori/store', 'KategoriArtikelController@store')->name('admin.artikel.kategori.store');
+	Route::get('/admin/artikel/kategori/edit/{id}', 'KategoriArtikelController@edit')->name('admin.artikel.kategori.edit');
+	Route::post('/admin/artikel/kategori/update', 'KategoriArtikelController@update')->name('admin.artikel.kategori.update');
+	Route::post('/admin/artikel/kategori/delete', 'KategoriArtikelController@delete')->name('admin.artikel.kategori.delete');
+
+	// Tag Artikel
+	Route::get('/admin/artikel/tag', 'TagController@index')->name('admin.artikel.tag.index');
+	Route::get('/admin/artikel/tag/create', 'TagController@create')->name('admin.artikel.tag.create');
+	Route::post('/admin/artikel/tag/store', 'TagController@store')->name('admin.artikel.tag.store');
+	Route::get('/admin/artikel/tag/edit/{id}', 'TagController@edit')->name('admin.artikel.tag.edit');
+	Route::post('/admin/artikel/tag/update', 'TagController@update')->name('admin.artikel.tag.update');
+	Route::post('/admin/artikel/tag/delete', 'TagController@delete')->name('admin.artikel.tag.delete');
+
+	// Kontributor Artikel
+	Route::get('/admin/artikel/kontributor', 'KontributorController@index')->name('admin.artikel.kontributor.index');
+	Route::get('/admin/artikel/kontributor/create', 'KontributorController@create')->name('admin.artikel.kontributor.create');
+	Route::post('/admin/artikel/kontributor/store', 'KontributorController@store')->name('admin.artikel.kontributor.store');
+	Route::get('/admin/artikel/kontributor/edit/{id}', 'KontributorController@edit')->name('admin.artikel.kontributor.edit');
+	Route::post('/admin/artikel/kontributor/update', 'KontributorController@update')->name('admin.artikel.kontributor.update');
+	Route::post('/admin/artikel/kontributor/delete', 'KontributorController@delete')->name('admin.artikel.kontributor.delete');
 
 	// Fitur
 	Route::get('/admin/fitur', 'FiturController@index');
@@ -105,7 +129,7 @@ Route::group(['middleware' => ['guest']], function(){
 		return view('error/403');
 	});
 
-
+	// Artikel
 	Route::get('/artikel', 'ArtikelController@index');
 	Route::get('/artikel/{permalink}', 'ArtikelController@detail');
 
