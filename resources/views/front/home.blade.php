@@ -125,7 +125,7 @@
                             <a href="/artikel/{{ $data->slug_artikel }}">
                             <img src="{{ asset('assets/images/artikel/'.$data->gambar_artikel) }}" alt="thumbnail" class="card-img-top rounded-1"></a>
                             <div class="card-body">
-                                <a href="/artikel/{{ $data->slug_artikel }}"><p class="m-0 font-weight-bold">{{ $data->judul_artikel }}</p></a>
+                                <a href="/artikel/{{ $data->slug_artikel }}"><p class="m-0 font-weight-bold text-truncate" title="{{ $data->judul_artikel }}">{{ $data->judul_artikel }}</p></a>
                                 <p class="m-0 text-muted">{{ substr(strip_tags(html_entity_decode($data->konten_artikel)),0,100) }}...</p>
                             </div>
                         </div>
