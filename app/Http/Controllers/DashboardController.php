@@ -69,7 +69,7 @@ class DashboardController extends Controller
         $testimoni = Testimoni::orderBy('order_testimoni','asc')->get();
 
         // Data artikel
-        $artikel = Artikel::orderBy('artikel_at','desc')->get();
+        $artikel = Artikel::orderBy('artikel_at','desc')->limit(4)->get();
 
         // View
         return view('front/home', [
