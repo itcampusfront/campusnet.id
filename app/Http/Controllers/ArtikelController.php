@@ -34,7 +34,7 @@ class ArtikelController extends Controller
         }
         else{
             // Data artikel
-            $artikel = Artikel::orderBy('artikel_at','desc')->get();
+            $artikel = Artikel::orderBy('artikel_at','desc')->paginate(12);
 
             // View
             return view('front/artikel/index', [
