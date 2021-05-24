@@ -28,6 +28,11 @@
                     @endforeach
                 @endif
             </div>
+            <div class="row mt-3">
+                <div class="col-auto mx-auto">
+                    {!! $artikel->links() !!}
+                </div>
+            </div>
         </div>
     </div>
 </section>
