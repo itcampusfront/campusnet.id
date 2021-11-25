@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use App\Role;
-use App\UpdatePassword;
-use App\User;
+use App\Models\Role;
+use App\Models\UpdatePassword;
+use App\Models\User;
 
 class UserController extends Controller
 {

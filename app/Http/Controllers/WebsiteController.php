@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
-use App\User;
-use App\Website;
-use App\WebRequest;
+use App\Models\User;
+use App\Models\Website;
+use App\Models\WebRequest;
 
 class WebsiteController extends Controller
 {

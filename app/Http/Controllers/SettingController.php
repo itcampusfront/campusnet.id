@@ -6,9 +6,9 @@ use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use App\Role;
-use App\Setting;
-use App\User;
+use App\Models\Role;
+use App\Models\Setting;
+use App\Models\User;
 
 class SettingController extends Controller
 {

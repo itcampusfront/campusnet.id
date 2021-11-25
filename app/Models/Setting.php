@@ -1,24 +1,24 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Artikel extends Model
+class Setting extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'artikel';
+    protected $table = 'settings';
 
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'id_artikel';
+    protected $primaryKey = 'id_setting';
 
     /**
      * The attributes that are mass assignable.
@@ -26,7 +26,7 @@ class Artikel extends Model
      * @var array
      */
     protected $fillable = [
-        'judul_artikel', 'slug_artikel', 'gambar_artikel', 'kategori_artikel', 'tag_artikel', 'author_artikel', 'kontributor_artikel', 'konten_artikel', 'artikel_at',
+        'setting_name', 'setting_category', 'setting_rules', 'setting_key', 'setting_value',
     ];
 
     /**

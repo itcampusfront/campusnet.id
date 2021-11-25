@@ -1,24 +1,24 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class WebRequest extends Model
+class Kontributor extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'request';
+    protected $table = 'kontributor';
 
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'id_request';
+    protected $primaryKey = 'id_kontributor';
 
     /**
      * The attributes that are mass assignable.
@@ -26,7 +26,7 @@ class WebRequest extends Model
      * @var array
      */
     protected $fillable = [
-        'api_key', 'username', 'host', 'ip_address', 'request_at'
+        'kontributor', 'slug',
     ];
 
     /**

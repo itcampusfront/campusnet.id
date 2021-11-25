@@ -1,24 +1,24 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Setting extends Model
+class KategoriArtikel extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'settings';
+    protected $table = 'kategori_artikel';
 
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'id_setting';
+    protected $primaryKey = 'id_ka';
 
     /**
      * The attributes that are mass assignable.
@@ -26,7 +26,7 @@ class Setting extends Model
      * @var array
      */
     protected $fillable = [
-        'setting_name', 'setting_category', 'setting_rules', 'setting_key', 'setting_value',
+        'kategori', 'slug',
     ];
 
     /**

@@ -1,24 +1,24 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Testimoni extends Model
+class Website extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'testimoni';
+    protected $table = 'website';
 
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'id_testimoni';
+    protected $primaryKey = 'id_website';
 
     /**
      * The attributes that are mass assignable.
@@ -26,7 +26,7 @@ class Testimoni extends Model
      * @var array
      */
     protected $fillable = [
-        'klien', 'ucapan_testimoni', 'order_testimoni', 'testimoni_at',
+        'id_user', 'website_key', 'website_url', 'website_status', 'website_at',
     ];
 
     /**

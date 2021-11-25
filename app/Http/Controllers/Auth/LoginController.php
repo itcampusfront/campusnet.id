@@ -8,9 +8,9 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
-use App\Mail\ForgotPasswordMail;
-use App\Setting;
-use App\User;
+use App\Models\Mail\ForgotPasswordMail;
+use App\Models\Setting;
+use App\Models\User;
 
 class LoginController extends Controller
 {

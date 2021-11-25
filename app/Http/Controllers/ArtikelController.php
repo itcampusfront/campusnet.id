@@ -6,11 +6,11 @@ use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use App\Artikel;
-use App\KategoriArtikel;
-use App\Kontributor;
-use App\Tag;
-use App\User;
+use App\Models\Artikel;
+use App\Models\KategoriArtikel;
+use App\Models\Kontributor;
+use App\Models\Tag;
+use App\Models\User;
 
 class ArtikelController extends Controller
 {

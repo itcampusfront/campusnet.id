@@ -1,24 +1,24 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Fitur extends Model
+class Artikel extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'fitur';
+    protected $table = 'artikel';
 
     /**
      * The primary key for the model.
      *
      * @var string
      */
-    protected $primaryKey = 'id_fitur';
+    protected $primaryKey = 'id_artikel';
 
     /**
      * The attributes that are mass assignable.
@@ -26,7 +26,7 @@ class Fitur extends Model
      * @var array
      */
     protected $fillable = [
-        'nama_fitur', 'deskripsi_fitur', 'gambar_fitur', 'order_fitur', 'fitur_at',
+        'judul_artikel', 'slug_artikel', 'gambar_artikel', 'kategori_artikel', 'tag_artikel', 'author_artikel', 'kontributor_artikel', 'konten_artikel', 'artikel_at',
     ];
 
     /**

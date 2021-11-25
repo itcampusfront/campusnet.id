@@ -6,8 +6,8 @@ use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use App\Fitur;
-use App\User;
+use App\Models\Fitur;
+use App\Models\User;
 
 class FiturController extends Controller
 {

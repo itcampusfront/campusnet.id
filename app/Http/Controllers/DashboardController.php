@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use App\Artikel;
-use App\Fitur;
-use App\Testimoni;
-use App\User;
-use App\Website;
+use App\Models\Artikel;
+use App\Models\Fitur;
+use App\Models\Testimoni;
+use App\Models\User;
+use App\Models\Website;
 
 class DashboardController extends Controller
 {
