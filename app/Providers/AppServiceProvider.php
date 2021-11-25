@@ -3,14 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\View;
-use App\Blog;
-use App\Files;
-use App\Halaman;
-use App\KategoriArtikel;
-use App\Setting;
-use App\User;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,8 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {  
-        View::composer('*', function($view){
-            //
-        });
+        Paginator::useBootstrap();
     }
 }
